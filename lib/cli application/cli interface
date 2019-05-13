@@ -1,0 +1,68 @@
+VirtualCafeDrinks::CLI 
+#encapsulate all of my logic into one #object/CLI controller
+
+
+def call
+	list_drinks
+	#menu/start
+	#coffee_drink_ingredients
+	start
+end
+
+def list_drinks
+	# a drink has a name a description
+	# DO NOT LIST ESPRESSO
+	
+	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
+	puts "Today we will learn about espresso and coffee drinks made with espresso"
+	puts espresso scraped data here
+	puts "Which espresso based drink would you like to learn about?"  
+	
+	@coffee_drink = VirtualCafeDrinks::VirtualCafe.coffee_description
+	@coffee_drink.each.with_index(1) do |coffee, index|
+	
+	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
+	end
+end
+
+ 
+def start/user_menu
+	input = nil
+	while input != "exit"
+		puts "Please select a number from 1-9"
+		puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	if input.to_i > 0 && if input.to_i < 10;
+		selected_coffee_drink = @coffee_drink[input.to_i-1]
+		puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}
+		
+		puts "Would you like the ingredients for this drink [enter y]? Would you like to start over [enter start over]? Or would you like to exit [enter exit]?
+		puts "Please type "y"
+		input = gets.strip.downcase
+		if input == "y"
+			selected_coffee_drink
+			puts "#{selected_coffee_drink.coffee_ingredients}
+		elsif input == "start over"
+			start
+		elsif input == "exit" 
+			puts "Thank you, I hope you had fun!  Have a wonderful day!
+			exit
+		else
+			puts "Sorry, that's an invalid response."
+		start
+		end
+	end
+end
+
+def coffee_drink_ingredients()
+	selected_coffee_drink
+	puts "#{selected_coffee_drink.coffee_ingredients}
+end
+	
+	
+	case input #avi changed to an if statements
+	
+	
+	
+
+	
+
