@@ -1,4 +1,4 @@
-VirtualCafeDrinks::CLI 
+VirtualCafe::CLI 
 #encapsulate all of my logic into one #object/CLI controller
 
 
@@ -18,7 +18,7 @@ def list_drinks
 	puts espresso scraped data here
 	puts "Which espresso based drink would you like to learn about?"  
 	
-	@coffee_drink = VirtualCafeDrinks::VirtualCafe.coffee_description
+	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
 	@coffee_drink.each.with_index(1) do |coffee, index|
 	
 	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
