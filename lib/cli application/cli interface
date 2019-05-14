@@ -59,7 +59,7 @@ def coffee_drink_ingredients()
 end
 	
 	
-	case input #avi changed to an if statements
+
 	
 	
 	
