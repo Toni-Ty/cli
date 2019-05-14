@@ -1,0 +1,61 @@
+class VirtualCafe::VirtualCafeDrinks
+
+attr_accessor :name, :coffee_description, :coffee_ingredients
+
+@@all = []
+
+
+def initialize (name = nil)
+	@name = name
+	@all << self
+	end
+end
+
+
+def self.all
+	@all
+end
+
+#describes the coffee drink
+#should return instances of coffee_descriptions
+#info below will be scraped
+
+def self.srape_coffee_description
+	self.scrape_drinks
+end
+
+
+def self.scrape_drinks
+	drinks = []
+
+drinks << self.scrape_ecooe
+
+#coffee_drink = self.new
+#coffee_drink.name = Espresso
+#coffee_drink.coffee_description = " "
+#coffee_drink.recipe = " "
+#want an array of scraped drinks
+#Avi uses title = doc.search("h2.main-title).text	55:30
+	drinks
+
+end
+
+def self.scrape_ecooe
+	doc = Nokogiri::HTML(open("https://www.ecooe.com/ecooe-life/9-major-types-of-coffee-drinks/"))
+
+#describes how to make the coffee drink
+def self.scrape_coffee_ingredients
+	
+	
+	
+end
+
+
+
+
+
+
+
+
+
+
