@@ -4,4 +4,4 @@ require 'open-uri'
 
 require_relative "./required/version"
 require_relative './required/cli'
-require_relative './required/Virtual_Cafe' 
+require_relative './required/Virtual_Cafe_Drinks' 
