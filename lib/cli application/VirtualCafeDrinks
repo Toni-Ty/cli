@@ -28,7 +28,7 @@ end
 def self.scrape_drinks
 	drinks = []
 
-drinks << self.scrape_ecooe
+drinks << self.scrape_latteart
 
 #coffee_drink = self.new
 #coffee_drink.name = Espresso
@@ -40,8 +40,8 @@ drinks << self.scrape_ecooe
 
 end
 
-def self.scrape_ecooe
-	doc = Nokogiri::HTML(open("https://www.ecooe.com/ecooe-life/9-major-types-of-coffee-drinks/"))
+def self.scrape_latteart
+doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
 
 #describes how to make the coffee drink
 def self.scrape_coffee_ingredients
