@@ -35,14 +35,15 @@ drinks << self.scrape_latteart
 #coffee_drink.coffee_description = " "
 #coffee_drink.recipe = " "
 #want an array of scraped drinks
-#Avi uses title = doc.search("h2.main-title).text	55:30
-	drinks
 
 end
 
 def self.scrape_latteart
 doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
-
+doc.css("div.awr-i").each do |drinks|
+      drinks.css('//p[9]').each do |drink|
+        espresso_drink_ingredients = 
+        
 #describes how to make the coffee drink
 def self.scrape_coffee_ingredients
 	
