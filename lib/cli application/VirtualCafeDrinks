@@ -16,7 +16,7 @@ def self.all
 	@all
 end
 
-#describes the coffee drink
+
 #should return instances of coffee_descriptions
 #info below will be scraped
 
@@ -33,12 +33,13 @@ drinks << self.scrape_latteart
 #coffee_drink = self.new
 #coffee_drink.name = Espresso
 #coffee_drink.coffee_description = " "
-#coffee_drink.recipe = " "
-#want an array of scraped drinks
+#coffee_drink.coffee_ingredients = " "
+
 
 end
 
 def self.scrape_latteart
+
 doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
 doc.css("div.awr-i").each do |drinks|
       drinks.css('//p[9]').collect do |drink|

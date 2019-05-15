@@ -6,7 +6,6 @@ def call
 	#list_drinks
 	#main_menu
 	#coffee_drink_ingredients
-	#main_menu
 end
 
 def list_drinks
@@ -35,7 +34,7 @@ def main_menu
 		selected_coffee_drink = @coffee_drink[input.to_i-1]
 		puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}
 		
-		puts "Would you like the ingredients for this drink [enter y]? Would you like to start over [enter start over]? Or would you like to exit [enter exit]?
+		puts "Would you like the ingredients for this drink [enter y/n]? Would you like to start over [enter start over]?
 
 		input = gets.strip.downcase
 		if input == "y"
@@ -43,7 +42,7 @@ def main_menu
 			puts "#{selected_coffee_drink.coffee_ingredients}
 		elsif input == "start over" 
 		main_menu
-		elsif input == "exit" 
+		elsif input == "n" 
 			puts "Thank you, I hope you had fun!  Have a wonderful day!
 			exit
 		else
@@ -55,7 +54,7 @@ end
 
 def coffee_drink_ingredients()
 	selected_coffee_drink
-	puts "#{selected_coffee_drink.coffee_ingredients}
+	puts "#{selected_coffee_drink.coffee_ingredients}"
 end
 	
 	
