@@ -11,7 +11,7 @@ end
 
 def list_drinks
 	# a drink has a name a description
-	# DO NOT LIST ESPRESSO
+
 	
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
 	puts "Today we will learn about espresso based coffee drinks!"
@@ -29,14 +29,14 @@ end
 def start/user_menu
 	input = nil
 	while input != "exit"
-		puts "Please select a number from 1-9"
+		puts "Please select a number from 1-12"
 		puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	if input.to_i > 0 && if input.to_i < 10;
+	if input.to_i > 0 && if input.to_i < 12;
 		selected_coffee_drink = @coffee_drink[input.to_i-1]
 		puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}
 		
 		puts "Would you like the ingredients for this drink [enter y]? Would you like to start over [enter start over]? Or would you like to exit [enter exit]?
-		puts "Please type "y"
+
 		input = gets.strip.downcase
 		if input == "y"
 			selected_coffee_drink
