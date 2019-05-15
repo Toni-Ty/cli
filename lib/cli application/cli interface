@@ -6,7 +6,7 @@ def call
 	list_drinks
 	#menu/start
 	#coffee_drink_ingredients
-	start
+	#menu/start
 end
 
 def list_drinks
