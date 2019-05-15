@@ -58,7 +58,9 @@ def coffee_drink_ingredients()
 end
 	
 	
+def exit
 
+end
 	
 	
 	
