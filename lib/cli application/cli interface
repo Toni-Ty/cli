@@ -40,7 +40,7 @@ def main_menu
 		if input == "y"
 			selected_coffee_drink
 			puts "#{selected_coffee_drink.coffee_ingredients}
-			main_menu
+			list_drinks
 		elsif input == "start over" 
 		main_menu
 		elsif input == "n" 
