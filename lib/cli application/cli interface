@@ -14,7 +14,7 @@ def list_drinks
 	# DO NOT LIST ESPRESSO
 	
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
-	puts "Today we will learn about espresso and coffee drinks made with espresso"
+	puts "Today we will learn about espresso based coffee drinks!"
 	puts espresso scraped data here
 	puts "Which espresso based drink would you like to learn about?"  
 	
