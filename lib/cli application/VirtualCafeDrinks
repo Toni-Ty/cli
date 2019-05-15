@@ -41,7 +41,7 @@ end
 def self.scrape_latteart
 doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
 doc.css("div.awr-i").each do |drinks|
-      drinks.css('//p[9]').each do |drink|
+      drinks.css('//p[9]').collect do |drink|
         espresso_drink_ingredients = 
         
 #describes how to make the coffee drink
