@@ -2,9 +2,8 @@ Hello World!!!
 
 # Cli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+VirtualDrinkCafe 
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -24,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Provides espresso based coffee drinks and recipe ingredients
 
 ## Development
 
