@@ -10,6 +10,7 @@ require 'nokogiri'  #add to spec as well
 require 'pry'
 require 'open-uri'
 
-require_relative "./required/version"
-require_relative './required/cli'
-require_relative './required/Virtual_Cafe_Drinks' 
+require_relative "./cli_application/version"
+require_relative './cli_application/cli_interface'
+require_relative './cli_application/virtual_cafe_drinks' 
+require_relative './cli_application/cli_scraper'
