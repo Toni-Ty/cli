@@ -1,22 +1,3 @@
-class VirtualCafe::Virtual_Cafe_Drinks
-
-attr_accessor :name, :coffee_description, :coffee_ingredients
-
-@@all = []
-
-
-def initialize (name = nil)
-	@name = name
-	@all << self
-	end
-end
-
-
-def self.all
-	@all
-end
-
-
 #should return instances of coffee_descriptions
 #info below will be scraped
 
@@ -51,13 +32,3 @@ def self.scrape_coffee_ingredients
 	
 	
 end
-
-
-
-
-
-
-
-
-
-
