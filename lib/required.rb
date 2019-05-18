@@ -1,4 +1,4 @@
-module Cli
+module VirtualCafe
   class Error < StandardError; end
   # Your code goes here...
 end

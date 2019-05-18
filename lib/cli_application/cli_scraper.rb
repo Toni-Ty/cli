@@ -1,5 +1,8 @@
 #should return instances of coffee_descriptions
 #info below will be scraped
+class VirtualCafe::CLI_SCRAPER
+
+
 
 def self.srape_coffee_description
 	self.scrape_drinks
