@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-
-require "cli"
+`require_relative "../lib/required"`
 
 VirtualCafe::CLI.new.call
