@@ -1,8 +1,6 @@
-class VirtualCafe::CLI
+class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
-def hello
-  puts "hello w."
-end
+
 
 # def call
 # 	#list_drinks
