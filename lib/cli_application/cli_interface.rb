@@ -2,11 +2,11 @@ class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
 
 
-# def call
-# 	list_drinks
-# 	main_menu
-# 	coffee_drink_ingredients
-# end
+def call
+	# list_drinks
+	# main_menu
+	# coffee_drink_ingredients
+end
 
 # def list_drinks
 #
