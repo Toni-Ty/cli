@@ -1,7 +1,7 @@
-module VirtualCafe
-  class Error < StandardError; end
-  # Your code goes here...
-end
+# module VirtualCafe
+#   class Error < StandardError; end
+#   # Your code goes here...
+# end
 
 
 require 'nokogiri'  #add to spec as well

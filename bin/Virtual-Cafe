@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-VirtualCafe::CLI_INTERFACE.new.call
+# VirtualCafe::CLI_INTERFACE.new.call
 
 require_relative '../lib/required'

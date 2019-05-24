@@ -2,16 +2,25 @@ class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
 
 
+
+
 def call
-	# list_drinks
+	list_drinks
 	# main_menu
 	# coffee_drink_ingredients
 end
 
-# def list_drinks
-#
-# 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
-# 	puts "Today we will learn about espresso based coffee drinks!"
+
+def list_drinks
+
+	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
+	puts "Today we will learn about espresso based coffee drinks!"
+end
+
+latte = VirtualCafe::CLI_INTERFACE.new
+latte.call
+
+
 #   puts "Which coffee drink would you like to learn about?"
 # 	# puts espresso scraped data here
 #
