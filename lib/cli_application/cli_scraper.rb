@@ -3,17 +3,9 @@ require 'pry'
 #info below will be scraped
 class VirtualCafe::CLI_SCRAPER
 
-
-
-# def self.srape_coffee_description
-# 	self.scrape_drinks
-# end
-
-
+# coffee_description
 
 def self.scrape_latteart
-
-
 doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
 doc.css("div.awr-i").each do |drinks|
 		coffee_blurb = drinks.css("p").text
@@ -24,16 +16,8 @@ doc.css("div.awr-i").each do |drinks|
 	end
 end
 
+# coffee_ingredients
+def self.scrape_coffee_recipe
 
-
+	end
 end
-
-
-
-
-
-        # espresso_drink_ingredients
-
-
-#describes how to make the coffee drink
-# def self.scrape_coffee_ingredients
