@@ -11,7 +11,10 @@ doc.css("div.awr-i").each do |drinks|
 		coffee_blurb = drinks.css("p").text
 		binding.pry
 			coffee_blurb.each.with_index(1) do |coffee, index|
-
+				# 	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
+				# 	@coffee_drink.each.with_index(1) do |coffee, index|
+				#
+				# 	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
 		end
 	end
 end

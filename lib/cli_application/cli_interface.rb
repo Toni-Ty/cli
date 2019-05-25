@@ -15,24 +15,19 @@ def list_drinks
 
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
 	puts "Today we will learn about espresso based coffee drinks!"
+  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  puts "Which coffee drink would you like to learn about?"
 end
 
 latte = VirtualCafe::CLI_INTERFACE.new
 latte.call
 
-
-#   puts "Which coffee drink would you like to learn about?"
-# 	# puts espresso scraped data here
-#
-# 	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
-# 	@coffee_drink.each.with_index(1) do |coffee, index|
-#
-# 	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
+# 	puts espresso scraped data here
 #
 #   end
 #
 #
-# def main_menu
+def main_menu
 # puts "Please select a number from 1-12"
 # 	input = nil
 # 	if input.to_i > 0 && if input.to_i < 12;
@@ -56,7 +51,7 @@ latte.call
 # 		main_menu
 # 		end
 # 	end
-# end
+end
 #
 #  def coffee_drink_ingredients()
 #  	# selected_coffee_drink
