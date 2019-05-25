@@ -22,7 +22,7 @@ end
 latte = VirtualCafe::CLI_INTERFACE.new
 latte.call
 
-# 	puts espresso scraped data here
+# 	puts espresso scraped data here:  self.scrape_latteart
 #
 #   end
 #
