@@ -19,8 +19,6 @@ def list_drinks
   puts "Which coffee drink would you like to learn about?"
 end
 
-latte = VirtualCafe::CLI_INTERFACE.new
-latte.call
 
 # 	puts espresso scraped data here:  self.scrape_latteart
 #
@@ -59,7 +57,5 @@ end
 # end
 #
 
-def exit
 
-end
 end
