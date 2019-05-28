@@ -6,11 +6,11 @@ class VirtualCafe::CLI_SCRAPER
 # coffee_description
 
 def self.scrape_latteart
-doc = Nokogiri::HTML(open("https://www.latteartguide.com/2016/01/different-types-of-coffee.html#piccolo"))
+doc = Nokogiri::HTML(open("http://www.cafepoint.co.uk/different-types-of-coffee/"))
 doc.css("div.awr-i").each do |drinks|
 		coffee_blurb = drinks.css("p").text
 		binding.pry
-			coffee_blurb.each.with_index(1) do |coffee, index|
+			coffee_blurb.each_with_index(1) do |coffee, index|
 				# 	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
 				# 	@coffee_drink.each.with_index(1) do |coffee, index|
 				#
