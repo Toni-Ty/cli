@@ -5,8 +5,8 @@ class VirtualCafe::CLI_INTERFACE
 
 #
 def call
-  VirtualCafe::CLI_SCRAPER.new.scrape_cafe
 	list_drinks
+  VirtualCafe::CLI_SCRAPER.new.scrape_cafe
 	# main_menu
 # 	# coffee_drink_ingredients
 end
