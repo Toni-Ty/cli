@@ -13,15 +13,17 @@ def scrape_cafe
 
 	coffee.each do |coffee_drink|
 	  coffee_descrip = coffee_drink.css("h2").text
-	   coffee_descrip.each.with_index(1) do |coffee, index|
+			@coffee_description = VirtualCafe::Virtual_Cafe_Drinks
+			 	@coffee_description.each.with_index(1) do |coffee, index|
+
+			 	puts "#{index}. #{coffee}"
 	    end
 		end
 	end
 
-				# 	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
-				# 	@coffee_drink.each.with_index(1) do |coffee, index|
-				#
-				# 	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
+					# @coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
+					# @coffee_drink.each.with_index(1) do |coffee, index|
+					# puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
 # 		end
 # 	end
 # end
