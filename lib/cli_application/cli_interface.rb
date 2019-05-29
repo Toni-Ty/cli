@@ -18,7 +18,6 @@ def list_drinks
 	puts "Today we will learn about espresso based coffee drinks!"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Which coffee drink would you like to learn about?"
-# 	puts espresso scraped data here:  self.scrape_cafe
   end
 #
 #
