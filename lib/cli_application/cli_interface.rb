@@ -3,11 +3,12 @@ class VirtualCafe::CLI_INTERFACE
 
 
 
-
+#
 def call
+  VirtualCafe::CLI_SCRAPER.new.scrape_cafe
 	list_drinks
 	# main_menu
-	# coffee_drink_ingredients
+# 	# coffee_drink_ingredients
 end
 
 
@@ -17,15 +18,12 @@ def list_drinks
 	puts "Today we will learn about espresso based coffee drinks!"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Which coffee drink would you like to learn about?"
-end
-
-
-# 	puts espresso scraped data here:  self.scrape_latteart
-#
-#   end
+# 	puts espresso scraped data here:  self.scrape_cafe
+  end
 #
 #
 def main_menu
+
 # puts "Please select a number from 1-12"
 # 	input = nil
 # 	if input.to_i > 0 && if input.to_i < 12;

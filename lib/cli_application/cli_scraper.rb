@@ -1,11 +1,10 @@
-require 'pry'
 #should return instances of coffee_descriptions
-#info below will be scraped
+
 class VirtualCafe::CLI_SCRAPER
 
-# coffee_description
+# coffee_descriptions
 
-def self.scrape_cafe
+def scrape_cafe
 
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
@@ -14,17 +13,18 @@ def self.scrape_cafe
 
 	coffee.each do |coffee_drink|
 	  coffee_descrip = coffee_drink.css("h2").text
-	   coffee_descrip.each_with_index(1) do |coffee, index|
+	   coffee_descrip.each.with_index(1) do |coffee, index|
 	    end
+		end
 	end
 
 				# 	@coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
 				# 	@coffee_drink.each.with_index(1) do |coffee, index|
 				#
 				# 	puts "#{index}. #{coffee_drink.name} - #{@coffee_drink.description}
-		end
-	end
-end
+# 		end
+# 	end
+# end
 
 # coffee_ingredients
 def self.scrape_coffee_recipe
