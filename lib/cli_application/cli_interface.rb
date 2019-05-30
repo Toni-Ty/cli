@@ -15,17 +15,20 @@ end
 def list_drinks
 
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
-	puts "Today we will learn about espresso based coffee drinks!"
+	puts "Today we will learn about the following espresso based coffee drinks!"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Which coffee drink would you like to learn about?"
+   puts "Please select a number from 1-15"
+  input = gets.strip.to_i
+  print_coffee_drink (input)
   end
 #
 #
 def main_menu
 
-# puts "Please select a number from 1-12"
+#
 # 	input = nil
-# 	if input.to_i > 0 && if input.to_i < 12;
+# 	if input.to_i > 0 && if input.to_i < 15;
 # 		selected_coffee_drink = @coffee_drink[input.to_i-1]
 # 		 puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}"
 #
