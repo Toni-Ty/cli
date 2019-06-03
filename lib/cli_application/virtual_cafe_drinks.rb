@@ -16,5 +16,10 @@ def initialize (name = nil, coffee_description = nil, recipe = nil)
 
 def self.all
 	@all
-  end
+end
+
+
+def self.reset
+	@@all.clear
+	end
 end

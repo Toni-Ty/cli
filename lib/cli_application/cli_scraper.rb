@@ -12,9 +12,9 @@ def scrape_cafe
 		coffee = page.css("div.col-md-9.list section").each do |coffees|
 
 	# coffee.each do |coffee_drink|
-		coffee_name = coffees
-	  coffee_description = coffees.css("h2").text
-		coffee_ingredients = coffees.css("p")
+		coffee_name = coffees.css("h2").text
+	  coffee_description = coffees.css("p").text
+		coffee_ingredients = coffees.css("ul li")
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, coffee_description, coffee_ingredients)
 	end
@@ -30,8 +30,7 @@ end
 		#
 		# 	 	puts "#{index}. #{coffee_descrip}"
 	  #   end
-		end
-	end
+
 
 					# @coffee_drink = VirtualCafe::VirtualCafeDrinks.coffee_description
 					# @coffee_drink.each.with_index(1) do |coffee, index|
@@ -40,14 +39,14 @@ end
 # 	end
 # end
 
-# coffee_ingredients
-def self.scrape_coffee_recipe(ingredients)
-
-		site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
-
-		page = Nokogiri::HTML(open(site))
-		coffee = page.css("div.col-md-9.list section")
-ingredients.recipe =
-		end
-	end
+# # coffee_ingredients
+# def self.scrape_coffee_recipe(ingredients)
+#
+# 		site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+#
+# 		page = Nokogiri::HTML(open(site))
+# 		coffee = page.css("div.col-md-9.list section")
+# ingredients.recipe =
+# 		end
+# 	end
 end

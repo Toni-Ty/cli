@@ -1,7 +1,8 @@
 class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
 
-
+def initialize
+  @espresso_drinks =  VirtualCafe::Virtual_Cafe_Drinks.all
 
 #
 def call
@@ -18,9 +19,9 @@ def list_drinks
 	puts "Today we will learn about the following espresso based coffee drinks!"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Which coffee drink would you like to learn about?"
-   puts "Please select a number from 1-15"
+  puts "Please select a number from 1-15"
   input = gets.strip.to_i
-  print_coffee_drink (input)
+  puts
   end
 #
 #
