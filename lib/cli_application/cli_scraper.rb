@@ -14,7 +14,7 @@ def self.scrape_cafe
 	# coffee.each do |coffee_drink|
 		coffee_name = coffees.css("h2").text
 	  coffee_description = coffees.css("p").text #gives evertyhing from descrip to ingredients
-		coffee_ingredients = coffees.css("ul li")
+		coffee_ingredients = coffees.css("ul li").text
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, coffee_description, coffee_ingredients)
 	end
