@@ -1,14 +1,14 @@
 class VirtualCafe::Virtual_Cafe_Drinks
 
-attr_accessor :name, :coffee_description, :recipe
+attr_accessor :name, :coffee_description, :coffee_ingredients
 
 @@all = []
 
 
 def initialize (name = nil, coffee_description = nil, recipe = nil)
-	@name = name
+	@name = coffee_name
 	@coffee_description = coffee_description
-	@recipe = recipe
+	@recipe = coffee_ingredients
 	@all << self
 	end
 
