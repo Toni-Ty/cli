@@ -9,11 +9,11 @@ def scrape_cafe
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 	page = Nokogiri::HTML(open(site))
-	coffee = page.css("div.col-md-9.list section")
+	coffee = page.css("div.col-md-9.list section").each do |coffees|
 
-	coffee.each do |coffee_drink|
-	# 	drinks = []
-	  coffee_description = coffee_drink.css("h2").text
+	# coffee.each do |coffee_drink|
+	  coffee_description = coffees.css("h2").text
+		coffee
 
 
 
