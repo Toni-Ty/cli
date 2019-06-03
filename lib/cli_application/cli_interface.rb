@@ -3,13 +3,13 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
   @espresso_drinks =  VirtualCafe::Virtual_Cafe_Drinks.all
+end
 
-#
 def call
 	list_drinks
-  VirtualCafe::CLI_SCRAPER.new.scrape_cafe
+  VirtualCafe::CLI_SCRAPER.scrape_cafe
 	# main_menu
-# 	# coffee_drink_ingredients
+	# coffee_drink_ingredients
 end
 
 
@@ -20,8 +20,10 @@ def list_drinks
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   puts "Which coffee drink would you like to learn about?"
   puts "Please select a number from 1-15"
+  print_coffees
   input = gets.strip.to_i
-  puts
+
+
   end
 #
 #
@@ -58,5 +60,10 @@ end
 # end
 #
 
+def print_coffees
+  @espresso_drinks.each.with_index(1) do |drink, index|
+    puts "#{index}. #{drink}"
+    end
+end
 
 end

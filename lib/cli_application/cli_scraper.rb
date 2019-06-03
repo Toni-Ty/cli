@@ -4,7 +4,7 @@ class VirtualCafe::CLI_SCRAPER
 
 # coffee_descriptions
 
-def scrape_cafe
+def self.scrape_cafe
 
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
