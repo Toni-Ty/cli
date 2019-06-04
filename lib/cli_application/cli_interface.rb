@@ -2,7 +2,7 @@ class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
 
 def initialize
-  @espresso_drinks =  VirtualCafe::Virtual_Cafe_Drinks.all
+  @create_coffee_drink =  VirtualCafe::Virtual_Cafe_Drinks.all
 end
 
 def call
@@ -61,7 +61,7 @@ end
 #
 
 def print_coffees
-  @espresso_drinks.each.with_index(1) do |drink, index|
+  @create_coffee_drink.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink}"
     end
 end
