@@ -1,23 +1,21 @@
 class VirtualCafe::CLI_INTERFACE
 #encapsulate all of my logic into one #object/CLI controller
 
-def initialize
-  @create_coffee_drink =  VirtualCafe::Virtual_Cafe_Drinks.all
-end
+
 
 def call
 	list_drinks
   VirtualCafe::CLI_SCRAPER.scrape_cafe
-	print_coffees(input)
-	# coffee_drink_ingredients
+	print_coffees
+	#menu is last for receiving input
 end
 
 
 def list_drinks
 
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
-	puts "Today we will learn about the following espresso based coffee drinks!"
-  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	puts "Today we will learn about espresso based coffee drinks!"
+  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 end
 #
 #
@@ -54,9 +52,10 @@ end
 # end
 #
 
-def print_coffees(input)
+def print_coffees
   puts "Which coffee drink would you like to learn about?"
   puts "Please select a number from 1-15"
+  @create_coffee_drink =  VirtualCafe::Virtual_Cafe_Drinks.all
   @create_coffee_drink.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
     end

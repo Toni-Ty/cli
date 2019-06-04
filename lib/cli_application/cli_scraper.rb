@@ -16,7 +16,7 @@ def self.scrape_cafe
 	  # coffee_description = coffees.css("p").text #gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, coffee_description, coffee_ingredients)
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
 	end
 end
 
