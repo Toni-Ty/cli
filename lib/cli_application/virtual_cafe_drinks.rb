@@ -9,13 +9,13 @@ def initialize (name = nil, coffee_description = nil, recipe = nil)
 	@coffee_name = coffee_name
 	@coffee_description = coffee_description
 	@create_coffee_drink = create_coffee_drink
-	@all << self
+	@@all << self
 	end
 
 
 
 def self.all
-	@all
+	@@all
 end
 
 

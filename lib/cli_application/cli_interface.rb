@@ -8,7 +8,7 @@ end
 def call
 	list_drinks
   VirtualCafe::CLI_SCRAPER.scrape_cafe
-	# main_menu
+	print_coffees(input)
 	# coffee_drink_ingredients
 end
 
@@ -18,13 +18,7 @@ def list_drinks
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
 	puts "Today we will learn about the following espresso based coffee drinks!"
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-  puts "Which coffee drink would you like to learn about?"
-  puts "Please select a number from 1-15"
-  print_coffees
-  input = gets.strip.to_i
-
-
-  end
+end
 #
 #
 def main_menu
@@ -60,9 +54,11 @@ end
 # end
 #
 
-def print_coffees
+def print_coffees(input)
+  puts "Which coffee drink would you like to learn about?"
+  puts "Please select a number from 1-15"
   @create_coffee_drink.each.with_index(1) do |drink, index|
-    puts "#{index}. #{drink}"
+    puts "#{index}. #{drink.coffee_name}"
     end
 end
 
