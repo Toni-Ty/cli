@@ -55,8 +55,8 @@ end
 def print_coffees
   puts "Which coffee drink would you like to learn about?"
   puts "Please select a number from 1-15"
-  @create_coffee_drink =  VirtualCafe::Virtual_Cafe_Drinks.all
-  @create_coffee_drink.each.with_index(1) do |drink, index|
+  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+  @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
     end
 end
