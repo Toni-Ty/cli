@@ -9,7 +9,6 @@ def call
 	list_drinks
  	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
-	espresso_drinks_list
 	#menu is last for receiving input
 end
 
@@ -22,7 +21,7 @@ def list_drinks
 end
 
 def espresso_drinks_list(input)
-	input = gets.strip.to_i
+	# input = gets.strip.to_i
 		puts ""
 	case input
 when "1"
@@ -83,8 +82,8 @@ def main_menu
 # 			puts "Sorry, that's an invalid response."
 # 		main_menu
 # 		end
-# 	end
-end
+	end
+
 #
 #  def coffee_drink_ingredients()
 #  	# selected_coffee_drink
@@ -97,7 +96,10 @@ def print_coffees
   puts "Please select a number from 1-15"
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
-	end
+		puts ""
+		input = gets.strip.to_i
+		espresso_drinks_list(input)
+end
 end
 
 
