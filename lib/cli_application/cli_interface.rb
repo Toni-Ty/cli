@@ -24,8 +24,8 @@ end
 def main_menu
 	input = nil
 	if input.to_i > 0 && if input.to_i <= 15;
-# 		selected_coffee_drink = @coffee_drink[input.to_i-1]
-# 		 puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}"
+		selected_coffee_drink = @coffee_drink[input.to_i-1]
+		puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}"
 #
 # 		puts "Would you like the ingredients for this drink [enter y/n]? Would you like to start over [enter start over]?
 #
@@ -52,13 +52,16 @@ end
 # end
 #
 
-def print_coffees
+def print_coffees(input)
   puts "Which coffee drink would you like to learn about?"
   puts "Please select a number from 1-15"
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
+	input = gets.strip.to_i
 		puts ""
+	if
     end
 end
 
+end
 end
