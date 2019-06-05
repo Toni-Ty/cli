@@ -12,7 +12,8 @@ def self.scrape_cafe
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
 		coffee_name = coffees.css("h2").text
 	  # coffee_description = coffees.css("p").text #gives evertyhing from descrip to ingredients
-		create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
+		create_coffee_drink = coffees.css("p").text #perfect for coffee recipe
+		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
 	end
