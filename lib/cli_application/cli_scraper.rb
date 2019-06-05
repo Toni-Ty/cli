@@ -20,7 +20,7 @@ def self.scrape_cafe
 	end
 end
 
-
+#maybe use below
 
 		# drinks << coffee_descrip
 		# 	drinks.each_with_index(1) { |c, index| "#{index}. #{c}"}
