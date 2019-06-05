@@ -7,7 +7,7 @@ end
 
 def call
 	list_drinks
-  VirtualCafe::CLI_SCRAPER.scrape_cafe
+ 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
 	#menu is last for receiving input
 end
@@ -22,10 +22,8 @@ end
 #
 #
 def main_menu
-
-#
-# 	input = nil
-# 	if input.to_i > 0 && if input.to_i < 15;
+	input = nil
+	if input.to_i > 0 && if input.to_i <= 15;
 # 		selected_coffee_drink = @coffee_drink[input.to_i-1]
 # 		 puts "#{selected_coffee_drink.name} - #{@selected_coffee_drink.description}"
 #
@@ -59,6 +57,7 @@ def print_coffees
   puts "Please select a number from 1-15"
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
+		puts ""
     end
 end
 

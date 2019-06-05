@@ -5,7 +5,7 @@ attr_accessor :coffee_name, :create_coffee_drink
 @@all = []
 
 
-def initialize (name = nil, create_coffee_drink = nil)
+def initialize (coffee_name, create_coffee_drink)
 	@coffee_name = coffee_name
 	@create_coffee_drink = create_coffee_drink
 	@@all << self
