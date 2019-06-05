@@ -25,10 +25,10 @@ def self.reset
 end
 
 def espresso_drinks_list
-if input == 3
+	case input
+when "1"
+		coffee = page.css("div.col-md-9.list section p")[1].text
+when "2"
+		coffee = page.css("div.col-md-9.list section p")[7].text
+when "3"
 	coffee = page.css("div.col-md-9.list section p")[12].text
-
-
-
-
-	
