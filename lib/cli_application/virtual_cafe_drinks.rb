@@ -56,4 +56,7 @@ when "14"
 		coffee = page.css("div.col-md-9.list section p")[7].text
 when "15"
 		coffee = page.css("div.col-md-9.list section p")[7].text
-ext
+else
+	puts "Please enter a valid entry"
+  end
+end
