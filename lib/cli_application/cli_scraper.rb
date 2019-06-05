@@ -10,8 +10,6 @@ def self.scrape_cafe
 
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list section").each do |coffees|
-
-	# coffee.each do |coffee_drink|
 		coffee_name = coffees.css("h2").text
 	  # coffee_description = coffees.css("p").text #gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
