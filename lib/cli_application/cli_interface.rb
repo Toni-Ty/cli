@@ -3,7 +3,7 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-			 @espresso_description = VirtualCafe::Virtual_Cafe_Drinks.all
+
 end
 
 def call
@@ -26,42 +26,41 @@ end
 def espresso_drinks_list
 	input = gets.strip.to_i
 		puts ""
-	case input
-when 1
-		@espresso_description = coffee_description
-when "2"
+	if input == 1
+		espresso_description =  @create_coffee
+elsif input == 2
 		coffee = page.css("div.col-md-9.list section p")[7].text
-when "3"
-	coffee = page.css("div.col-md-9.list section p")[12].text
-when "4"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "5"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "6"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "7"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "8"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "9"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "10"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "11"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "12"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "13"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "14"
-		coffee = page.css("div.col-md-9.list section p")[7].text
-when "15"
-		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "3"
+# 	coffee = page.css("div.col-md-9.list section p")[12].text
+# when "4"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "5"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "6"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "7"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "8"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "9"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "10"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "11"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "12"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "13"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "14"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
+# when "15"
+# 		coffee = page.css("div.col-md-9.list section p")[7].text
 else
 	puts "Please enter a valid entry"
   end
 end
-
+end
 
 def main_menu
 	# input = nil

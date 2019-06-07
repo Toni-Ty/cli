@@ -11,7 +11,7 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
 		coffee_name = coffees.css("h2").text
-	  coffee_description = coffees.css("p").text
+	  coffee_description = coffees.css("p")[1].text
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
@@ -39,16 +39,18 @@ end
 # 	end
 # end
 
-# # coffee_ingredients
-# def self.scrape_coffee_recipe(ingredients)
-#
-# 		site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
-#
-# 		page = Nokogiri::HTML(open(site))
-# 		coffee = page.css("div.col-md-9.list section")
-# ingredients.recipe =
-# 		end
-# 	end
+#coffee description
+def self.scrape_coffee_recipe(description)
+
+	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+
+	page = Nokogiri::HTML(open(site))
+		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+
+	  coffee.description = coffees.css("p")[1].text
+
+		end
+	end
 end
 
 
