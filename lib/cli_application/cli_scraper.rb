@@ -47,7 +47,8 @@ def self.scrape_coffee_recipe
 	page = Nokogiri::HTML(open(site))
 	coffee_description = page.css("div.col-md-9.list section p")[1].text
 	puts coffee_description
-	coffee_description = page.css("div.col-md-9.list section p")[7].text
+
+	coffee_description_mach = page.css("div.col-md-9.list section p")[7].text
 	puts coffee_description_mach
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_description)

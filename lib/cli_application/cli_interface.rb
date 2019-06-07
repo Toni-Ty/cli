@@ -30,8 +30,7 @@ def espresso_drinks_list
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
 		# @cc = coffee_description
-		@cc.each.with_index(1) do |drink, index|
-			puts "#{index}. #{drink.coffee_description}"
+		@cc.coffee_description_mach
 	# elsif inputs == 2
 	# 	puts "ok"
 		# coffee = page.css("div.col-md-9.list section p")[7].text
@@ -65,7 +64,7 @@ def espresso_drinks_list
 # 	puts "Please enter a valid entry"
   end
 end
-end
+
 
 def main_menu
 	# input = nil
