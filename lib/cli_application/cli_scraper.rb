@@ -45,9 +45,10 @@ def self.scrape_coffee_recipe(description)
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 	page = Nokogiri::HTML(open(site))
-		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+		coffee = page.css("div.col-md-9.list section p")[1].text
 
-	  coffee.description = coffees.css("p")[1].text
+
+puts coffee
 
 		end
 	end
