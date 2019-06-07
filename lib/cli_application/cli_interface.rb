@@ -10,7 +10,7 @@ def call
 	list_drinks
  	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
-	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	# VirtualCafe::CLI_SCRAPER.scrape_cafe
 	espresso_drinks_list
 	#menu is last for receiving input
 end
@@ -26,11 +26,11 @@ end
 def espresso_drinks_list
 	inputs = gets.strip.to_i
 		puts ""
-		VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
+		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
 		# @cc = coffee_description
-		@cc.coffee_description_mach
+
 	# elsif inputs == 2
 	# 	puts "ok"
 		# coffee = page.css("div.col-md-9.list section p")[7].text

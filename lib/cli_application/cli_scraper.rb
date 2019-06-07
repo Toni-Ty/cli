@@ -15,8 +15,10 @@ def self.scrape_cafe
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
+		coffee_description = coffees.css("div.col-md-9.list section p").text
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
+
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink, coffee_description)
 	end
 end
 
@@ -42,16 +44,14 @@ end
 #coffee description
 def self.scrape_coffee_recipe
 
-	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
-	page = Nokogiri::HTML(open(site))
-	coffee_description = page.css("div.col-md-9.list section p")[1].text
-	puts coffee_description
 
-	coffee_description_mach = page.css("div.col-md-9.list section p")[7].text
-	puts coffee_description_mach
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_description)
+
+	# coffee_description_mach = page.css("div.col-md-9.list section p")[7].text
+	# puts coffee_description_mach
+
+
 
 
 		end
