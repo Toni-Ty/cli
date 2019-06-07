@@ -3,14 +3,14 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-
+			 @cc = VirtualCafe::Virtual_Cafe_Drinks.all
 end
 
 def call
 	list_drinks
  	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
-	# VirtualCafe::CLI_SCRAPER.scrape_cafe
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	espresso_drinks_list
 	#menu is last for receiving input
 end
@@ -24,12 +24,17 @@ def list_drinks
 end
 
 def espresso_drinks_list
-	input = gets.strip.to_i
+	inputs = gets.strip.to_i
 		puts ""
-	if input == 1
-		espresso_description =  @create_coffee
-elsif input == 2
-		coffee = page.css("div.col-md-9.list section p")[7].text
+		VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
+		# cc =  @create_coffee[input.to_i-1]
+	if inputs == 1
+		# @cc = coffee_description
+		@cc.each.with_index(1) do |drink, index|
+			puts "#{index}. #{drink.coffee_description}"
+	# elsif inputs == 2
+	# 	puts "ok"
+		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
 # 	coffee = page.css("div.col-md-9.list section p")[12].text
 # when "4"
@@ -56,8 +61,8 @@ elsif input == 2
 # 		coffee = page.css("div.col-md-9.list section p")[7].text
 # when "15"
 # 		coffee = page.css("div.col-md-9.list section p")[7].text
-else
-	puts "Please enter a valid entry"
+# else
+# 	puts "Please enter a valid entry"
   end
 end
 end

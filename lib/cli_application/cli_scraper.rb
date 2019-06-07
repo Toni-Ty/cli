@@ -11,12 +11,12 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
 		coffee_name = coffees.css("h2").text
-	  coffee_description = coffees.css("p")[1].text
+	  # coffee_description = coffees.css("p")[1].text
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink, coffee_description)
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
 	end
 end
 
@@ -40,19 +40,22 @@ end
 # end
 
 #coffee description
-def self.scrape_coffee_recipe(description)
+def self.scrape_coffee_recipe
 
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 	page = Nokogiri::HTML(open(site))
-		coffee = page.css("div.col-md-9.list section p")[1].text
+	coffee_description = page.css("div.col-md-9.list section p")[1].text
+	puts coffee_description
+	coffee_description = page.css("div.col-md-9.list section p")[7].text
+	puts coffee_description_mach
 
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_description)
 
-puts coffee
 
 		end
-	end
-end
+
+
 
 
 
@@ -89,4 +92,4 @@ end
 #       else
 #         student[:blog] = link
 #       end
-#     end
+    end
