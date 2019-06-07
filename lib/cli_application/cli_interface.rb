@@ -3,13 +3,15 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+			 @espresso_description = VirtualCafe::Virtual_Cafe_Drinks.all
 end
 
 def call
 	list_drinks
  	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
-	espresso_drinks_list(input)
+	# VirtualCafe::CLI_SCRAPER.scrape_cafe
+	espresso_drinks_list
 	#menu is last for receiving input
 end
 
@@ -21,12 +23,12 @@ def list_drinks
   puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 end
 
-def espresso_drinks_list(input)
+def espresso_drinks_list
 	input = gets.strip.to_i
 		puts ""
 	case input
-when "1"
-		coffee = page.css("div.col-md-9.list section p")[1].text
+when 1
+		@espresso_description = coffee_description
 when "2"
 		coffee = page.css("div.col-md-9.list section p")[7].text
 when "3"
