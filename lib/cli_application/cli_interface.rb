@@ -26,10 +26,10 @@ end
 def espresso_drinks_list
 	inputs = gets.strip.to_i
 		puts ""
-		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
-		# @cc = coffee_description
+		@cc.each.with_index(1) do |drink, index|
+			puts  "#{index}. #{drink.coffee_description}"
 
 	# elsif inputs == 2
 	# 	puts "ok"
@@ -63,6 +63,7 @@ def espresso_drinks_list
 # else
 # 	puts "Please enter a valid entry"
   end
+end
 end
 
 
