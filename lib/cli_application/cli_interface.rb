@@ -8,9 +8,7 @@ end
 
 def call
 	list_drinks
- 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	print_coffees
-	# VirtualCafe::CLI_SCRAPER.scrape_cafe
 	espresso_drinks_list
 	#menu is last for receiving input
 end
@@ -24,13 +22,16 @@ def list_drinks
 end
 
 def espresso_drinks_list
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	inputs = nil
 	inputs = gets.strip.to_i
-		puts ""
+
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
-		@cc.each do |d|
+		puts @cc.values_at(1)
 			# puts  "#{d.coffee_description}"
-			puts  d.coffee_description
+
+
 
 	# elsif inputs == 2
 	# 	puts "ok"
@@ -65,7 +66,7 @@ def espresso_drinks_list
 # 	puts "Please enter a valid entry"
   end
 end
-end
+
 
 
 def main_menu
@@ -100,12 +101,12 @@ def main_menu
 #
 
 def print_coffees
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
   puts "Which coffee drink would you like to learn about?"
   puts "Please select a number from 1-15"
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
 		puts ""
-
 		# input = gets.strip.to_i
 		# espresso_drinks_list(input)
 end

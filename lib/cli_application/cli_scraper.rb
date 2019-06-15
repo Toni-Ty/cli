@@ -17,6 +17,7 @@ def self.scrape_cafe
 		coffee_description = coffees.xpath("//div//p")[4].text
 
 
+
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 		# coffee_description = coffees.css("p").text
 
