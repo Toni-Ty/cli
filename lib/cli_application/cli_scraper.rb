@@ -1,4 +1,4 @@
-#should return instances of coffee_descriptions
+#scrapes data and returns instances of coffee_descriptions and instructions on how to make drinks
 
 class VirtualCafe::CLI_SCRAPER
 
@@ -15,7 +15,7 @@ def self.scrape_cafe
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
-		coffee_description = coffees.css("div.col-md-9.list section p").text
+		coffee_description = coffees.css("p").text
 
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink, coffee_description)

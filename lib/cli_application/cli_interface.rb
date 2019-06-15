@@ -28,8 +28,9 @@ def espresso_drinks_list
 		puts ""
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
-		@cc.each.with_index(1) do |drink, index|
-			puts  "#{index}. #{drink.coffee_description}"
+		@cc.each do |d|
+			# puts  "#{d.coffee_description}"
+			puts  d.coffee_description
 
 	# elsif inputs == 2
 	# 	puts "ok"
@@ -104,6 +105,7 @@ def print_coffees
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
 		puts ""
+
 		# input = gets.strip.to_i
 		# espresso_drinks_list(input)
 end
