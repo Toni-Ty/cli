@@ -12,3 +12,4 @@ require_relative "./cli_application/version"
 require_relative './cli_application/cli_interface'
 require_relative './cli_application/virtual_cafe_drinks'
 require_relative './cli_application/cli_scraper'
+require_relative './cli_application/espresso_drinks'

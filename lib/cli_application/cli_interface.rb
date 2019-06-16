@@ -3,7 +3,7 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-			 @cc = VirtualCafe::Virtual_Cafe_Drinks.all
+			 @return_drink_description = VirtualCafe::Espresso_Drinks.all
 end
 
 def call
@@ -23,15 +23,18 @@ end
 
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
+
 	input = nil
 	input = gets.strip.to_i
 
-		# cc =  @create_coffee[input.to_i-1]
 	if input == 1
-		frapp = @cc.first
-		puts  "#{frapp.coffee_description}"
+		frappucino = @return_drink_description.first
+		puts  "#{frappucino.frapp}"
 
 	elsif input == 2
+			carm_mach = @return_drink_description[2]
+			puts 	 "#{carm_mach.coffee_description}"
 
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
