@@ -23,20 +23,16 @@ end
 
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	inputs = nil
-	inputs = gets.strip.to_i
+	input = nil
+	input = gets.strip.to_i
 
 		# cc =  @create_coffee[input.to_i-1]
-	if inputs == 1
-		drink_up = @cc.first
+	if input == 1
+		frapp = @cc.first
+		puts  "#{frapp.coffee_description}"
 
+	elsif input == 2
 
-	  puts  "#{drink_up.coffee_description}"
-
-
-
-	# elsif inputs == 2
-	# 	puts "ok"
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
 # 	coffee = page.css("div.col-md-9.list section p")[12].text
