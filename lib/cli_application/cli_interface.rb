@@ -23,6 +23,7 @@ end
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
+	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipes
 
 	input = nil
 	input = gets.strip.to_i
