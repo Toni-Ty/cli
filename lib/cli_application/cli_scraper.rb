@@ -72,9 +72,11 @@ def self.scrape_coffee_recipes
 
 	page = Nokogiri::HTML(open(site))
 	coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+	coffee_name = coffees.css("h2").text
 
 
 	carm_mach = coffees.xpath("//div//p")[2].text
+
 end
 
 end
