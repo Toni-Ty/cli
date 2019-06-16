@@ -28,8 +28,10 @@ def espresso_drinks_list
 
 		# cc =  @create_coffee[input.to_i-1]
 	if inputs == 1
-		puts @cc.values_at(1)
-			# puts  "#{d.coffee_description}"
+		drink_up = @cc.first
+
+
+	  puts  "#{drink_up.coffee_description}"
 
 
 
