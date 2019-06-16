@@ -1,4 +1,4 @@
-# Creates instances of coffee drinks
+# Creates instances of coffee drink descriptions
 class VirtualCafe::Espresso_Drinks
 
 attr_accessor :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :cafe_cubano, :cafe_latte, :irish_coffee, :espresso, :cortado
@@ -21,6 +21,9 @@ def initialize (frapp)
   @@all << self
 	end
 
+  def carm_mach=(carm_mach)
+  	@carm_mach = carm_mach
+  end
 
 
 def self.all

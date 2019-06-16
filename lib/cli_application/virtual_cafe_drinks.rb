@@ -1,4 +1,4 @@
-# Creates instances of coffee drinks recipes
+# Creates instances of coffee drink recipes
 class VirtualCafe::Virtual_Cafe_Drinks
 
 attr_accessor :coffee_name, :create_coffee_drink

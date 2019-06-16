@@ -10,7 +10,6 @@ def call
 	list_drinks
 	print_coffees
 	espresso_drinks_list
-	#menu is last for receiving input
 end
 
 
@@ -31,10 +30,13 @@ def espresso_drinks_list
 	if input == 1
 		frappucino = @return_drink_description.first
 		puts  "#{frappucino.frapp}"
+		continue_on_to_recipe
+
 
 	elsif input == 2
-			carm_mach = @return_drink_description[2]
-			puts 	 "#{carm_mach.coffee_description}"
+			carm_macchiato = @return_drink_description[1]
+			puts  "#{carm_macchiato.carm_mach}"
+			continue_on_to_recipe
 
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
@@ -110,8 +112,12 @@ def print_coffees
 		puts ""
 		# input = gets.strip.to_i
 		# espresso_drinks_list(input)
-end
+	end
 end
 
+def continue_on_to_recipe
+	puts ""
+	puts "Would you like the recipe for this drink?"
+end
 
 end
