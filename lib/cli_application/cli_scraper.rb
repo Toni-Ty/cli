@@ -57,29 +57,36 @@ def self.scrape_coffee_recipe
 
 	# frapp = page.css("div.col-md-9.list section p")[7].text
 	frapp = coffees.xpath("//div//p")[4].text
+	carm_mach = coffees.xpath("//div//p")[10].text
 
 
 
-VirtualCafe::Espresso_Drinks.new(frapp)
+VirtualCafe::Espresso_Drinks.new(frapp, carm_mach)
 end
 
 end
 
+#
+# def self.scrape_coffee_recipes
+# 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+#
+#
+# 	page = Nokogiri::HTML(open(site))
+# 	coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+# 	coffee_name = coffees.css("h2").text
+#
+#
+# 	carm_mach = coffees.xpath("//div//p")[2].text
+#
+# 	VirtualCafe::Espresso_Drinks.new(carm_mach)
+#
+# end
+#
+# end
 
-def self.scrape_coffee_recipes
-	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 
-	page = Nokogiri::HTML(open(site))
-	coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
-	coffee_name = coffees.css("h2").text
 
-
-	carm_mach = coffees.xpath("//div//p")[2].text
-
-end
-
-end
 
 # TAKEN FROM OO-STUDENT SCRAPER LAB
 # require 'open-uri'
