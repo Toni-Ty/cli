@@ -7,8 +7,9 @@ def self.scrape_cafe
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 	page = Nokogiri::HTML(open(site))
-		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
-		coffee_name = coffees.css("h2").text
+		coffee = page.css("div.col-md-9.list").each do |coffees|
+		coffee_name = coffees.css("section h2").text
+
 		# coffee_name = coffees.xpath("h2").text
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
