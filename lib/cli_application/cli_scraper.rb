@@ -2,8 +2,6 @@
 
 class VirtualCafe::CLI_SCRAPER
 
-# coffee_descriptions
-
 def self.scrape_cafe
 
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
@@ -11,7 +9,7 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
 		coffee_name = coffees.css("h2").text
-
+		# coffee_name = coffees.xpath("h2").text
 		#gives evertyhing from descrip to ingredients
 		create_coffee_drink = coffees.css("ul li").text
 
@@ -20,8 +18,6 @@ def self.scrape_cafe
 
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 		# coffee_description = page.css("div.col-md-9.list section p").text
-
-
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
 	end
@@ -58,10 +54,10 @@ def self.scrape_coffee_recipe
 	# frapp = page.css("div.col-md-9.list section p")[7].text
 	frapp = coffees.xpath("//div//p")[4].text
 	carm_mach = coffees.xpath("//div//p")[10].text
+	cafe_mocha = coffees.xpath("//div//p")[16].text
 
 
-
-VirtualCafe::Espresso_Drinks.new(frapp, carm_mach)
+VirtualCafe::Espresso_Drinks.new(frapp, carm_mach, cafe_mocha)
 end
 
 end

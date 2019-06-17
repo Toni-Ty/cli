@@ -39,6 +39,12 @@ def espresso_drinks_list
 			puts  "#{carm_macchiato.carm_mach}"
 			continue_on_to_recipe
 
+	elsif input == 3
+				caf_mo = @return_drink_description[2]
+				puts  "#{caf_mo.cafe_mocha}"
+				continue_on_to_recipe
+
+
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
 # 	coffee = page.css("div.col-md-9.list section p")[12].text
@@ -120,5 +126,8 @@ def continue_on_to_recipe
 	puts ""
 	puts "Would you like the recipe for this drink?"
 end
+
+
+
 
 end
