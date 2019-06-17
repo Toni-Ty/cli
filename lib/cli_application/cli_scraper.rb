@@ -54,7 +54,7 @@ def self.scrape_coffee_recipe
 	# frapp = page.css("div.col-md-9.list section p")[7].text
 	frapp = coffees.xpath("//div//p")[4].text
 	carm_mach = coffees.xpath("//div//p")[10].text
-	cafe_mocha = coffees.xpath("//div//p")[16].text
+	cafe_mocha = coffees.xpath("//div//p")[15].text
 
 
 VirtualCafe::Espresso_Drinks.new(frapp, carm_mach, cafe_mocha)
