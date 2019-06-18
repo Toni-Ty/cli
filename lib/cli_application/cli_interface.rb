@@ -157,6 +157,14 @@ end
 def continue_on_to_recipe
 	puts ""
 	puts "Would you like the recipe for this drink?"
+	puts "If so, please type [the name of the drink]...Or type [start over]"
+	puts "If you'd like to exit, please type [exit]"
+	input = nil
+	input = gets.strip.to_i
+# 	if input == "frappucino"
+# 		puts "hi"
+		# elsif
+		# 	puts
 end
 
 

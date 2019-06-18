@@ -10,8 +10,9 @@ def self.scrape_cafe
 		coffee_name = coffees.css("h2").text
 		# coffee_name = coffees.xpath("h2").text
 
-		create_coffee_drink = coffees.css("ul li").text
-		create_coffee_drink = coffees.xpath("//div//p")[4].text
+		# create_coffee_drink = coffees.css("ul li").text
+		frapp_recp = coffees.xpath("//div//p")[4].text
+
 
 
 
@@ -19,7 +20,7 @@ def self.scrape_cafe
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 		# coffee_description = page.css("div.col-md-9.list section p").text
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, create_coffee_drink)
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, frapp_recp, carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp)
 	end
 end
 
