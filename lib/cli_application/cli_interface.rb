@@ -44,23 +44,23 @@ def espresso_drinks_list
 		continue_on_to_recipe
 
 	elsif input == 4
-		caf_mo = @return_drink_description[3]
-		puts  "#{caf_mo.cafe_mocha}"
+		american = @return_drink_description[3]
+		puts  "#{american.americano}"
 		continue_on_to_recipe
 
 	elsif input == 5
-		caf_mo = @return_drink_description[4]
-		puts  "#{caf_mo.cafe_mocha}"
+		turk_co = @return_drink_description[4]
+		puts  "#{turk_co.turkish_coffee}"
 		continue_on_to_recipe
 
 	elsif input == 6
-		caf_mo = @return_drink_description[5]
-		puts  "#{caf_mo.cafe_mocha}"
+		caf_cubano = @return_drink_description[5]
+		puts  "#{caf_cubano.cafe_cubano}"
 		continue_on_to_recipe
 
 	elsif input == 7
-		caf_mo = @return_drink_description[6]
-		puts  "#{caf_mo.cafe_mocha}"
+		caf_latte = @return_drink_description[6]
+		puts  "#{caf_latte.cafe_latte}"
 		continue_on_to_recipe
 
 elsif input == 8
