@@ -19,7 +19,8 @@ def self.scrape_cafe
 		# create_coffee_drink = coffees.css("ul li").text #perfect for coffee recipe
 		# coffee_description = page.css("div.col-md-9.list section p").text
 
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, frapp_recp)
+		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name)
+		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp)
 		#  carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp
 	end
 end
