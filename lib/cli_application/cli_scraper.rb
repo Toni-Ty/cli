@@ -56,7 +56,13 @@ def self.scrape_coffee_recipe
 	frapp = coffees.xpath("//div//p")[4].text
 	carm_mach = coffees.xpath("//div//p")[10].text
 	cafe_mocha = coffees.xpath("//div//p")[15].text
-
+	americano = coffees.xpath("//div//p")[15].text
+	turkish_coffee = coffees.xpath("//div//p")[15].text
+	cafe_cubano = coffees.xpath("//div//p")[15].text
+	cafe_latte = coffees.xpath("//div//p")[15].text
+	irish_coffee = coffees.xpath("//div//p")[15].text
+	espresso = coffees.xpath("//div//p")[15].text
+	cortadoa = coffees.xpath("//div//p")[15].text
 
 VirtualCafe::Espresso_Drinks.new(frapp, carm_mach, cafe_mocha)
 end

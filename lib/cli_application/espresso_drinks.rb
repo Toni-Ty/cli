@@ -6,7 +6,7 @@ attr_accessor :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :caf
 @@all = []
 
 
-def initialize (frapp, carm_mach, cafe_mocha)
+def initialize (frapp, carm_mach, cafe_mocha, americano, turkish_coffee, cafe_cubano, cafe_latte, irish_coffee, espresso, cortado)
 	# frapp, carm_mach, cafe_mocha, americano, turkish_coffee, cafe_cubano, cafe_latte, irish_coffee, espresso, cortado)
 	@frapp = frapp
   @carm_mach = carm_mach
