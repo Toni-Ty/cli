@@ -1,5 +1,4 @@
 #scrapes data and returns instances of coffee_descriptions and instructions on how to make drinks
-
 class VirtualCafe::CLI_SCRAPER
 
 def self.scrape_cafe
@@ -9,10 +8,10 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
 		coffee_name = coffees.css("h2").text
-
 		# coffee_name = coffees.xpath("h2").text
-		#gives evertyhing from descrip to ingredients
+
 		create_coffee_drink = coffees.css("ul li").text
+		create_coffee_drink = coffees.xpath("//div//p")[4].text
 
 
 
