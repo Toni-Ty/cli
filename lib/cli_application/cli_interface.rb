@@ -64,18 +64,18 @@ def espresso_drinks_list
 		continue_on_to_recipe
 
 elsif input == 8
-		caf_mo = @return_drink_description[7]
-		puts  "#{caf_mo.cafe_mocha}"
+		irish_coffee = @return_drink_description[7]
+		puts  "#{ir_co.irish_coffee}"
 		continue_on_to_recipe
 
 	elsif input == 9
-		caf_mo = @return_drink_description[8]
-		puts  "#{caf_mo.cafe_mocha}"
+		espress = @return_drink_description[8]
+		puts  "#{espress.espresso}"
 		continue_on_to_recipe
 
 	elsif input == 10
-		caf_mo = @return_drink_description[9]
-		puts  "#{caf_mo.cafe_mocha}"
+		cort = @return_drink_description[9]
+		puts  "#{cort.cortado}"
 		continue_on_to_recipe
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
