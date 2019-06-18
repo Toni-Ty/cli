@@ -64,7 +64,7 @@ def espresso_drinks_list
 		continue_on_to_recipe
 
 elsif input == 8
-		irish_coffee = @return_drink_description[7]
+		ir_co = @return_drink_description[7]
 		puts  "#{ir_co.irish_coffee}"
 		continue_on_to_recipe
 
