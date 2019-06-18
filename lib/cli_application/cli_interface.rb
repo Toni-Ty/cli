@@ -4,6 +4,7 @@ class VirtualCafe::CLI_INTERFACE
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
 			 @return_drink_description = VirtualCafe::Espresso_Drinks.all
+			 @return_recipes = VirtualCafe::Espresso_Drink_Recipes.all
 end
 
 def call
@@ -155,19 +156,22 @@ def print_coffees
 end
 
 def continue_on_to_recipe
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	puts ""
 	puts "Would you like the recipe for this drink?"
 	puts "If so, please type [the name of the drink]...Or type [start over]"
 	puts "If you'd like to exit, please type [exit]"
 	input = nil
-	input = gets.strip.to_i
-# 	if input == "frappucino"
-# 		puts "hi"
-		# elsif
-		# 	puts
+	input = gets.strip
+	# input.downcase??? or integer???
+	if input == "frappucino"
+		fr_rcp = @return_recipes.first
+		puts "#{fr_rcp.frapp_recp}"
+		else
+			puts "bye"
 end
 
-
+end
 
 
 end
