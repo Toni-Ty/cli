@@ -33,18 +33,50 @@ def espresso_drinks_list
 		puts  "#{frappucino.frapp}"
 		continue_on_to_recipe
 
-
 	elsif input == 2
-			carm_macchiato = @return_drink_description[1]
-			puts  "#{carm_macchiato.carm_mach}"
-			continue_on_to_recipe
+		carm_macchiato = @return_drink_description[1
+		puts  "#{carm_macchiato.carm_mach}"
+		continue_on_to_recipe
 
 	elsif input == 3
-				caf_mo = @return_drink_description[2]
-				puts  "#{caf_mo.cafe_mocha}"
-				continue_on_to_recipe
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
 
+	elsif input == 4
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
 
+	elsif input == 5
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
+
+	elsif input == 6
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
+
+	elsif input == 7
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
+
+elsif input == 8
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
+
+	elsif input == 9
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
+
+	elsif input == 10
+		caf_mo = @return_drink_description[2]
+		puts  "#{caf_mo.cafe_mocha}"
+		continue_on_to_recipe
 		# coffee = page.css("div.col-md-9.list section p")[7].text
 # when "3"
 # 	coffee = page.css("div.col-md-9.list section p")[12].text
