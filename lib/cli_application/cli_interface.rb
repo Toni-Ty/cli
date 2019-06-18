@@ -30,8 +30,8 @@ def espresso_drinks_list
 	input = gets.strip.to_i
 
 	if input == 1
-		frappucino = @return_drink_description.first
-		puts  "#{frappucino.frapp}"
+		frappuccino = @return_drink_description.first
+		puts  "#{frappuccino.frapp}"
 		continue_on_to_recipe
 
 	elsif input == 2
@@ -157,21 +157,29 @@ end
 
 def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	puts ""
 	puts "Would you like the recipe for this drink?"
 	puts "If so, please type [the name of the drink]...Or type [start over]"
 	puts "If you'd like to exit, please type [exit]"
-	input = nil
+	coffee_recipes
+end
+
+
+
+def coffee_recipes
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	input = gets.strip
 	# input.downcase??? or integer???
-	if input == "frappucino"
-		fr_rcp = @return_recipes.first
+	if input == "frappuccino"
+		fr_rcp = @return_recipes
 		puts "#{fr_rcp.frapp_recp}"
 		else
 			puts "bye"
 end
-
 end
+
 
 
 end
