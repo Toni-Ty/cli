@@ -159,7 +159,7 @@ def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	puts ""
-	puts "Would you like the recipe for this drink?"
+	puts "Would you like the ingredients for this drink?"
 	puts "If so, please type [the name of the drink]...Or type [start over]"
 	puts "If you'd like to exit, please type [exit]"
 	coffee_recipes
@@ -170,14 +170,23 @@ end
 def coffee_recipes
 	VirtualCafe::CLI_SCRAPER.scrape_cafe_two
 	input = nil
-	input = gets.strip.to_i
+	input = gets.strip.downcase
 
 # Had to include .first, but do not understand why
-	if input == 90
-		fr_rcp = @return_recipes.first
-		puts "#{fr_rcp.frapp_recp}"
-		else
-			puts "bye"
+	if input == "frappuccino"
+		fr_recp = @return_recipes.first
+		puts "#{fr_recp.frapp_recp}"
+
+	elsif input == "caramel macchiato"
+		cm_mach_recp = @return_recipes[1]
+		puts "#{cm_mach_recp.carm_mach_recp}"
+
+	elsif input == "cafe mocha"
+		caf_mo_recp = @return_recipes[2]
+		puts "#{caf_mo_recp.cafe_mocha_recp}"
+
+	else
+		puts "bye"
 end
 end
 

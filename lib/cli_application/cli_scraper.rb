@@ -98,8 +98,10 @@ def self.scrape_cafe_two
 
 
 			frapp_recp = coffees.css("ul li")[0..4].text
+			carm_mach_recp = coffees.css("ul li")[0..4].text
+			cafe_mocha_recp = coffees.css("ul li")[0..4].text
 
-		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp)
+		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp, carm_mach_recp, cafe_mocha_recp)
 	end
 end
 
