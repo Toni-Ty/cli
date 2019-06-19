@@ -168,17 +168,23 @@ end
 
 
 def coffee_recipes
-	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
-	input = gets.strip
-	# input.downcase??? or integer???
-	if input == "frappuccino"
-		fr_rcp = @return_recipes
+	VirtualCafe::CLI_SCRAPER.scrape_cafe_two
+	input = nil
+	input = gets.strip.to_i
+
+# Had to include .first, but do not understand why
+	if input == 90
+		fr_rcp = @return_recipes.first
 		puts "#{fr_rcp.frapp_recp}"
 		else
 			puts "bye"
 end
 end
+
+# def coffee_recipe_descriptions
+# 	fr_rcp = @return_recipes
+# 	puts "#{fr_rcp.frapp_recp}"
+# end
 
 
 

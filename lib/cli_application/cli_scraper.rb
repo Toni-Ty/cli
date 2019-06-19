@@ -11,7 +11,7 @@ def self.scrape_cafe
 		# coffee_name = coffees.xpath("h2").text
 
 		# create_coffee_drink = coffees.css("ul li").text
-			frapp_recp = coffees.css("ul li")[0..4].text
+			# frapp_recp = coffees.css("ul li")[0..4].text
 
 
 
@@ -20,7 +20,7 @@ def self.scrape_cafe
 		# coffee_description = page.css("div.col-md-9.list section p").text
 
 		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name)
-		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp)
+		# VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp)
 		#  carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp
 	end
 end
@@ -87,6 +87,21 @@ end
 # end
 #
 # end
+
+#
+def self.scrape_cafe_two
+
+	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+
+	page = Nokogiri::HTML(open(site))
+		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+
+
+			frapp_recp = coffees.css("ul li")[0..4].text
+
+		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp)
+	end
+end
 
 
 
