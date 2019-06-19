@@ -185,9 +185,13 @@ def coffee_recipes
 		caf_mo_recp = @return_recipes[2]
 		puts "#{caf_mo_recp.cafe_mocha_recp}"
 
+	elsif input == "exit"
+		puts "Have a great day and thank you for using the Virtual Cafe!"
+
 	else
-		puts "bye"
-end
+		 list_drinks
+
+	 end
 end
 
 # def coffee_recipe_descriptions
