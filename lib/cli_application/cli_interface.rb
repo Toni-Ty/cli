@@ -189,7 +189,7 @@ def coffee_recipes
 		puts "Have a great day and thank you for using the Virtual Cafe!"
 
 	else
-		 list_drinks
+		 call
 
 	 end
 end
