@@ -194,11 +194,6 @@ def coffee_recipes
 	 end
 end
 
-# def coffee_recipe_descriptions
-# 	fr_rcp = @return_recipes
-# 	puts "#{fr_rcp.frapp_recp}"
-# end
-
 
 
 end
