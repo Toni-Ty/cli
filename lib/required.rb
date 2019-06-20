@@ -7,6 +7,7 @@
 require 'nokogiri'  #add to spec as well
 require 'pry'
 require 'open-uri'
+require 'colorize'
 
 require_relative "./cli_application/version"
 require_relative './cli_application/cli_interface'

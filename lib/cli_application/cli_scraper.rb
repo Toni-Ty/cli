@@ -100,7 +100,6 @@ def self.scrape_cafe_two
 			frapp_recp = coffees.css("ul li")[0..4].text
 			carm_mach_recp = coffees.css("ul li")[0..4].text
 			cafe_mocha_recp = coffees.css("ul li")[0..4].text
-			cafe_mocha_recp = coffees.css("ul li")[0..4].text
 			americano_recp = coffees.css("ul li")[0..4].text
 			turkish_coffee_recp = coffees.css("ul li")[0..4].text
 			cafe_cubano_recp = coffees.css("ul li")[0..4].text

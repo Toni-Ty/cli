@@ -159,9 +159,9 @@ def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	puts ""
-	puts "Would you like the ingredients for this drink?"
-	puts "If so, please type [the name of the drink]...Or type [start over]"
-	puts "If you'd like to exit, please type [exit]"
+	puts "Would you like the ingredients for this drink?".light_blue
+	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
+	puts "If you'd like to exit, please type [exit]".light_blue
 	coffee_recipes
 end
 
@@ -184,6 +184,34 @@ def coffee_recipes
 	elsif input == "cafe mocha"
 		caf_mo_recp = @return_recipes[2]
 		puts "#{caf_mo_recp.cafe_mocha_recp}"
+
+	elsif input == "americano"
+		american_recp = @return_recipes[3]
+		puts "#{american_recp.americano_recp}"
+
+	elsif input == "turkish coffee"
+		turk_recp = @return_recipes[4]
+		puts "#{turk_recp.turkish_coffee_recp}"
+
+	elsif input == "cafe cubano"
+		cub_recp = @return_recipes[5]
+		puts "#{cub_recp.cafe_cubano_recp}"
+
+	elsif input == "cafe latte"
+		caf_la_recp = @return_recipes[6]
+		puts "#{caf_la_recp.cafe_latte_recp}"
+
+	elsif input == "irish coffee"
+		irish_recp = @return_recipes[7]
+		puts "#{irish_recp.irish_coffee_recp}"
+
+	elsif input == "espresso"
+		espress_recp = @return_recipes[8]
+		puts "#{espress_recp.espresso_recp}"
+
+	elsif input == "cortado"
+		cort_recp = @return_recipes[9]
+		puts "#{cort_recp.cortado_recp}"
 
 	elsif input == "exit"
 		puts "Have a great day and thank you for using the Virtual Cafe!"
