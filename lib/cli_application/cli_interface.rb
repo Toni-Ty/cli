@@ -214,7 +214,7 @@ def coffee_recipes
 		puts "#{cort_recp.cortado_recp}"
 
 	elsif input == "exit"
-		puts "Have a great day and thank you for using the Virtual Cafe!"
+		puts "Have a great day and thank you for using the Virtual Cafe!".magenta
 
 	else
 		 call

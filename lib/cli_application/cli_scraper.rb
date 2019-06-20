@@ -95,17 +95,18 @@ def self.scrape_cafe_two
 
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
+# americano done,
+# cafe mocha took all
 
-
-			frapp_recp = coffees.css("ul li")[0..4].text
-			carm_mach_recp = coffees.css("ul li")[0..4].text
-			cafe_mocha_recp = coffees.css("ul li")[0..4].text
-			americano_recp = coffees.css("ul li")[0..4].text
-			turkish_coffee_recp = coffees.css("ul li")[0..4].text
-			cafe_cubano_recp = coffees.css("ul li")[0..4].text
-		 	cafe_latte_recp = coffees.css("ul li")[0..4].text
-			irish_coffee_recp = coffees.css("ul li")[0..4].text
-			espresso_recp = coffees.css("ul li")[0..4].text
+			frapp_recp = coffees.css("ul li")[0..8].text
+			carm_mach_recp = coffees.css("ul li")[0..8].text
+			cafe_mocha_recp = coffees.css("ul li")[0..8].text
+			americano_recp = coffees.css("ul li")[0..8].text
+			turkish_coffee_recp = coffees.css("ul li")[0..8].text
+			cafe_cubano_recp = coffees.css("ul li")[0..8].text
+		 	cafe_latte_recp = coffees.css("ul li")[0..10].text
+			irish_coffee_recp = coffees.css("ul li")[0..8].text
+			espresso_recp = coffees.css("ul li")[0..13].text
 			cortado_recp = coffees.css("ul li")[0..4].text
 
 		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp, carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp)
