@@ -18,7 +18,7 @@ def list_drinks
 
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
 	puts "Today we will learn about espresso based coffee drinks!".magenta
-  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 end
 
 def espresso_drinks_list
@@ -147,6 +147,7 @@ def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
+	puts "(for example, FRAPPUCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
  	@create_coffee[0..9].each do |drink|
 	puts  "#{drink.coffee_name}"
 
