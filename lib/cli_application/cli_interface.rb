@@ -146,14 +146,19 @@ def main_menu
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
   puts "Which coffee drink would you like to learn about?".magenta
-  puts "Please select a number from 1-15".magenta
-  @create_coffee.each.with_index(1) do |drink, index|
-    puts "#{index}. #{drink.coffee_name}"
+  puts "Please select a number from 1-10".magenta
+ 	@create_coffee[0..9].each do |drink|
+	puts  "#{drink.coffee_name}"
+
+
+  # @create_coffee.each.with_index(1) do |drink, index|
+  #   puts "#{index}. #{drink.coffee_name}"
 		puts ""
 		# input = gets.strip.to_i
 		# espresso_drinks_list(input)
 	end
 end
+
 
 def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
