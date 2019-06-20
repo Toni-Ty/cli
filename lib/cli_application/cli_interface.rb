@@ -164,7 +164,7 @@ def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	puts ""
-	puts "Would you like the ingredients for this drink?".light_blue
+	puts "Would you like the recipe for this drink?".light_blue
 	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
 	puts "If you'd like to exit, please type [exit]".light_blue
 	coffee_recipes
