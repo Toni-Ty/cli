@@ -1,7 +1,7 @@
 # Creates instances of coffee drink descriptions
 class VirtualCafe::Espresso_Drink_Recipes
 
-attr_accessor :frapp_recp, :carm_mach_recp, :cafe_mocha_recp :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
+attr_accessor :frapp_recp, :carm_mach_recp, :cafe_mocha_recp, :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
 
 @@all = []
 

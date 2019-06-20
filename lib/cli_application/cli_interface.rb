@@ -16,8 +16,8 @@ end
 
 def list_drinks
 
-	puts "Hello, and Welcome to the Virtual Coffee Cafe!"
-	puts "Today we will learn about espresso based coffee drinks!"
+	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
+	puts "Today we will learn about espresso based coffee drinks!".magenta
   puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 end
 
@@ -145,8 +145,8 @@ def main_menu
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-  puts "Which coffee drink would you like to learn about?"
-  puts "Please select a number from 1-15"
+  puts "Which coffee drink would you like to learn about?".magenta
+  puts "Please select a number from 1-15".magenta
   @create_coffee.each.with_index(1) do |drink, index|
     puts "#{index}. #{drink.coffee_name}"
 		puts ""
