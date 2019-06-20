@@ -98,8 +98,8 @@ def self.scrape_cafe_two
 # americano done,
 # cafe mocha took all
 
-			frapp_recp = coffees.css("ul li")[0..8].text
-			carm_mach_recp = coffees.css("ul li")[0..8].text
+			frapp_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+			carm_mach_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
 			cafe_mocha_recp = coffees.css("ul li")[0..8].text
 			americano_recp = coffees.css("ul li")[0..8].text
 			turkish_coffee_recp = coffees.css("ul li")[0..8].text
