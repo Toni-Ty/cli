@@ -50,14 +50,14 @@ def self.scrape_cafe_two
 
 			frapp_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
 			carm_mach_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-			cafe_mocha_recp = coffees.css("ul li")[0..8].text(/.Step/, ". Step")
-			americano_recp = coffees.css("ul li")[0..8].text(/.Step/, ". Step")
-			turkish_coffee_recp = coffees.css("ul li")[0..8].text(/.Step/, ". Step")
-			cafe_cubano_recp = coffees.css("ul li")[0..8].text(/.Step/, ". Step")
-		 	cafe_latte_recp = coffees.css("ul li")[0..10].text(/.Step/, ". Step")
-			irish_coffee_recp = coffees.css("ul li")[0..8].text(/.Step/, ". Step")
-			espresso_recp = coffees.css("ul li")[0..13].text(/.Step/, ". Step")
-			cortado_recp = coffees.css("ul li")[0..4].text(/.Step/, ". Step")
+			cafe_mocha_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+			americano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+			turkish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+			cafe_cubano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+		 	cafe_latte_recp = coffees.css("ul li")[0..10].text.gsub(/.Step/, ". Step")
+			irish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+			espresso_recp = coffees.css("ul li")[0..13].text.gsub(/.Step/, ". Step")
+			cortado_recp = coffees.css("ul li")[0..4].text.gsub(/.Step/, ". Step")
 
 		VirtualCafe::Espresso_Drink_Recipes.new(frapp_recp, carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp)
 	end
