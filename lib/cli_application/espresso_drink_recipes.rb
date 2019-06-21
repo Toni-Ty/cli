@@ -18,12 +18,7 @@ def initialize (frapp_recp, carm_mach_recp, cafe_mocha_recp, americano_recp, tur
   @espresso_recp = espresso_recp
   @cortado_recp = cortado_recp
   @@all << self
-	end
-
-  # def carm_mach=(carm_mach)
-  # 	@carm_mach = carm_mach
-  # end
-
+end
 
 def self.all
 	@@all
