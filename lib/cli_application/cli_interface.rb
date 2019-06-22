@@ -3,18 +3,16 @@ class VirtualCafe::CLI_INTERFACE
 
 def initialize
 		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-			 @return_drink_description = VirtualCafe::Espresso_Drinks.all
-			 @return_recipes = VirtualCafe::Espresso_Drink_Recipes.all
 end
 
 def call
-	list_drinks
+	greeting
 	print_coffees
 	espresso_drinks_list
 end
 
 
-def list_drinks
+def greeting
 
 	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
 	puts "Today we will learn about espresso based coffee drinks!".magenta
@@ -23,8 +21,6 @@ end
 
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
-
 
 	input = nil
 	input = gets.strip.to_i
@@ -99,7 +95,6 @@ end
 
 def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	VirtualCafe::CLI_SCRAPER.scrape_coffee_recipe
 	puts ""
 	puts "Would you like the recipe for this drink?".light_blue
 	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
@@ -110,7 +105,7 @@ end
 
 
 def coffee_recipes
-	VirtualCafe::CLI_SCRAPER.scrape_cafe_two
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	input = nil
 	input = gets.strip.downcase
 
