@@ -15,12 +15,6 @@ def call
 end
 
 
-# def greeting
-#
-# 	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
-# 	puts "Today we will learn about espresso based coffee drinks!".magenta
-#   puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
-# end
 
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
