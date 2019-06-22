@@ -33,10 +33,12 @@ def initialize (coffee_name, frapp, carm_mach, cafe_mocha, americano, turkish_co
 	end
 
 
-
 def self.all
 	@@all
+
 end
+
+
 
 def self.reset
 	@@all.clear

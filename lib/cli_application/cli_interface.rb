@@ -6,18 +6,21 @@ def initialize
 end
 
 def call
-	greeting
+
+		puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
+		puts "Today we will learn about espresso based coffee drinks!".magenta
+	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 	print_coffees
 	espresso_drinks_list
 end
 
 
-def greeting
-
-	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
-	puts "Today we will learn about espresso based coffee drinks!".magenta
-  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
-end
+# def greeting
+#
+# 	puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
+# 	puts "Today we will learn about espresso based coffee drinks!".magenta
+#   puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
+# end
 
 def espresso_drinks_list
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
@@ -31,7 +34,7 @@ def espresso_drinks_list
 		continue_on_to_recipe
 
 	elsif input == 2
-		carm_macchiato = @create_coffeen[1]
+		carm_macchiato = @create_coffee[1]
 		puts  "#{carm_macchiato.carm_mach}"
 		continue_on_to_recipe
 
@@ -115,7 +118,7 @@ def coffee_recipes
 		puts "#{fr_recp.frapp_recp}"
 
 	elsif input == "caramel macchiato"
-		cm_mach_recp = @create_coffees[1]
+		cm_mach_recp = @create_coffee[1]
 		puts "#{cm_mach_recp.carm_mach_recp}"
 
 	elsif input == "cafe mocha"
