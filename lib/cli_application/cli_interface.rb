@@ -147,7 +147,7 @@ def coffee_recipes
 		puts "#{espress_recp.espresso_recp}"
 
 	elsif input == "cortado"
-		cort_recp = @return_recipes[9]
+		cort_recp = @create_coffee[9]
 		puts "#{cort_recp.cortado_recp}"
 
 	elsif input == "exit"
