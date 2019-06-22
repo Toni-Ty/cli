@@ -29,8 +29,8 @@ def get_user_input
 end
 
 def validate(input)
-		spa = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-		spa ?  : invalid_input
+		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
+		drink_selection ?  : invalid_input
 end
 
 
