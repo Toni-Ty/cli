@@ -20,7 +20,7 @@ end
 
 def get_user_input
 	@input = gets.strip.downcase
-
+end
 
 
 	# elsif input == "exit"
@@ -28,11 +28,19 @@ def get_user_input
 	#
 	# else
 	# 	 call
-end
 #
 def validate(input)
 		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
 		drink_selection ? coffee_description(drink_selection) : invalid_input
+end
+
+def coffee_description(drink_selection)
+VirtualCafe::CLI_SCRAPER.scrape_cafe
+
+	#  Had to include .first, but do not understand why
+frapps = @create_coffee.first
+	puts  "#{frapps.frapp}"
+	# puts "#{drink_selection.frapp}"
 end
 
 def invalid_input
