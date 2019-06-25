@@ -14,13 +14,13 @@ def call
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 	print_coffees
 	get_user_input
-	# validate(@input)
+	validate(@input)
 end
 
 
 def get_user_input
-	input = gets.strip.downcase
-	coffee_selection =  VirtualCafe::Virtual_Cafe_Drinks.find(input.to_i)
+	@input = gets.strip.downcase
+
 
 
 	# elsif input == "exit"
@@ -30,14 +30,14 @@ def get_user_input
 	# 	 call
 end
 #
-# def validate(input)
-# 		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-# 		drink_selection ? coffee_description : invalid_input
-# end
+def validate(input)
+		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
+		drink_selection ? coffee_description(drink_selection) : invalid_input
+end
 
-# def invalid_input
-# 	puts "I don't understand, please try again".magenta
-# end
+def invalid_input
+	puts "I don't understand, please try again".magenta
+end
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
