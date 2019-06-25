@@ -1,7 +1,7 @@
 # Creates instances of coffee drink recipes
 class VirtualCafe::Virtual_Cafe_Drinks
 
-attr_accessor :int_id, :coffee_name, :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :cafe_cubano, :cafe_latte, :irish_coffee, :espresso, :cortado, :frapp_recp, :carm_mach_recp, :cafe_mocha_recp, :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
+attr_accessor :coffee_name, :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :cafe_cubano, :cafe_latte, :irish_coffee, :espresso, :cortado, :frapp_recp, :carm_mach_recp, :cafe_mocha_recp, :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
 
 
 @@all = []
@@ -30,40 +30,39 @@ def initialize (coffee_name, frapp, carm_mach, cafe_mocha, americano, turkish_co
 	@espresso_recp = espresso_recp
 	@cortado_recp = cortado_recp
 	@@all << self
-	end
+end
 
 
 def self.all
 	@@all
-
 end
 
-def set_int_id
-	@int_id = @@all.length + 1
+def self.find(id)
+	self.all
 end
 
-  def self.find_by_id(input)
-    all.find{|s| s.int_id == input.to_i}
-end
+#   def self.find_by_id(input)
+#     all.find{|s| s.int_id == input.to_i}
+# end
 
 def self.reset
 	@@all.clear
 	end
 
 
-def coffee_description
-	VirtualCafe::CLI_SCRAPER.scrape_cafe
+# def coffee_description(coffee_selection)
+	# VirtualCafe::CLI_SCRAPER.scrape_cafe
 
 	# @create_coffee = VirtualCafe::Virtual_Cafe_Drink.all
 
 	# VirtualCafe::CLI_INTERFACE.
 	#  @create_coffee = VirtualCafe::Virtual_Cafe_Drinks.all
-	 # Had to include .first, but do not understand why
-	#
-	# frapp = @create_coffee.first
+	#  Had to include .first, but do not understand why
+
+	# frapp = coffee_selection.first
 	# puts  "#{frappuccino.frapp}"
-	#
-	#
+
+
 	#
 	# carm_macchiato = @create_coffee[1]
 	# puts  "#{carm_macchiato.carm_mach}"
@@ -129,8 +128,5 @@ def coffee_description
 	# cort_recp = @create_coffee[9]
 	# puts "#{cort_recp.cortado_recp}"
 
-end
-
-
-
+# end
 end

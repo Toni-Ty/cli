@@ -1,8 +1,8 @@
 class VirtualCafe::CLI_INTERFACE
 
-
+#
 def initialize
-		   @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+		  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
 end
 
 
@@ -14,12 +14,14 @@ def call
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 	print_coffees
 	get_user_input
-	validate(@input)
+	# validate(@input)
 end
 
 
 def get_user_input
-	@input = gets.strip.downcase
+	input = gets.strip.downcase
+	coffee_selection =  VirtualCafe::Virtual_Cafe_Drinks.find(input.to_i)
+
 
 	# elsif input == "exit"
 		# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
@@ -27,18 +29,19 @@ def get_user_input
 	# else
 	# 	 call
 end
+#
+# def validate(input)
+# 		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
+# 		drink_selection ? coffee_description : invalid_input
+# end
 
-def validate(input)
-		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-		drink_selection ? coffee_description : invalid_input
-end
-
-def invalid_input
-	puts "I don't understand, please try again".magenta
-end
+# def invalid_input
+# 	puts "I don't understand, please try again".magenta
+# end
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
+
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
