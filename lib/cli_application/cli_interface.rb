@@ -1,9 +1,9 @@
 class VirtualCafe::CLI_INTERFACE
 
 #
-def initialize
-		  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-end
+# def initialize
+# 		  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+# end
 
 
 
@@ -12,44 +12,44 @@ def call
 		puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
 		puts "Today we will learn about espresso based coffee drinks!".magenta
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
-	print_coffees
-	get_user_input
-	validate(@input)
+		VirtualCafe::CLI_SCRAPER.scrape_cafe
+		print_coffees
+		coffee_description
 end
-
-
-def get_user_input
-	@input = gets.strip.downcase
-end
-
-
 	# elsif input == "exit"
 		# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
 	#
 	# else
 	# 	 call
 #
-def validate(input)
-		drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-		drink_selection ? coffee_description(drink_selection) : invalid_input
-end
 
-def coffee_description(drink_selection)
+
+def coffee_description
 VirtualCafe::CLI_SCRAPER.scrape_cafe
+puts "please choose your drink"
+input = gets.strip.downcase
+# @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+#
+# @create_coffee[0].each do |drinks|
+if input == "exit"
+	puts "bye"
+elsif
+	input.to_i > 0
+	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input.to_i - 1)
+  puts "#{drink_selection.all}"
+else
+	"end of program"
 
 	#  Had to include .first, but do not understand why
-frapps = @create_coffee.first
-	puts  "#{frapps.frapp}"
+# frapps = @create_coffee.first
+# 	puts  "#{frapps.frapp}"
 	# puts "#{drink_selection.frapp}"
-end
-
-def invalid_input
-	puts "I don't understand, please try again".magenta
+	end
 end
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-
+	@create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
