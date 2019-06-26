@@ -36,7 +36,7 @@ if input == "exit"
 elsif
 	input.to_i > 0
 	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input.to_i - 1)
-  puts "#{drink_selection.all}"
+  puts "#{drink_selection.}"
 else
 	"end of program"
 
