@@ -1,7 +1,7 @@
 # Creates instances of coffee drink recipes
 class VirtualCafe::Virtual_Cafe_Drinks
 
-attr_accessor :coffee_name, :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :cafe_cubano, :cafe_latte, :irish_coffee, :espresso, :cortado, :frapp_recp, :carm_mach_recp, :cafe_mocha_recp, :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
+attr_accessor :int_id, :coffee_name, :frapp, :carm_mach, :cafe_mocha, :americano, :turkish_coffee, :cafe_cubano, :cafe_latte, :irish_coffee, :espresso, :cortado, :frapp_recp, :carm_mach_recp, :cafe_mocha_recp, :americano_recp, :turkish_coffee_recp, :cafe_cubano_recp, :cafe_latte_recp, :irish_coffee_recp, :espresso_recp, :cortado_recp
 
 
 @@all = []
@@ -37,12 +37,13 @@ def self.all
 	@@all
 end
 
-def self.find_by_id(index)
-	@@all[index]
+def set_int_id
+	@int_id = @@all.length + 1
+end
 
-	end
-
- # all.find{|s| s.int_id == input.to_i}
+def self.find_by_id(input)
+	all.find{|s| s.int_id == input.to_i}
+end
  # what is int_id
 
 def self.reset

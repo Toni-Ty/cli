@@ -14,7 +14,7 @@ def call
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		print_coffees
-		coffee_description
+		coffee_description (drink_selection)
 end
 	# elsif input == "exit"
 		# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
@@ -24,21 +24,23 @@ end
 #
 
 
-def coffee_description
+def coffee_description(drink_selection)
 VirtualCafe::CLI_SCRAPER.scrape_cafe
 puts "please choose your drink"
+drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
+
 input = gets.strip.downcase
 # @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
 #
 # @create_coffee[0].each do |drinks|
 if input == "exit"
 	puts "bye"
-elsif
-	input.to_i > 0
-	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input.to_i - 1)
-  puts "#{drink_selection.}"
 else
-	"end of program"
+	# @create_coffees =  VirtualCafe::Virtual_Cafe_Drinks.all
+	# good_coffee << @create_coffees
+
+  puts "#{drink_selection.frapp}"
+
 
 	#  Had to include .first, but do not understand why
 # frapps = @create_coffee.first
