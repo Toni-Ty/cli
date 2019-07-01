@@ -42,8 +42,8 @@ else
   puts "#{drink_selection.frapp}"
 
 
-	#  Had to include .first, but do not understand why
-# frapps = @create_coffee.first
+	# Had to include .first, but do not understand why
+#   frapps = @create_coffee.first
 # 	puts  "#{frapps.frapp}"
 	# puts "#{drink_selection.frapp}"
 	end
@@ -56,6 +56,7 @@ def print_coffees
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
  	@create_coffee[0..9].each do |drink|
+		binding.pry
 	puts  "#{drink.coffee_name}"
 	puts ""
 
