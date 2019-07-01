@@ -39,7 +39,7 @@ else
 	# @create_coffees =  VirtualCafe::Virtual_Cafe_Drinks.all
 	# good_coffee << @create_coffees
 
-  puts "#{drink_selection.frapp}"
+  puts "#{drink_selection.name}"
 
 
 	# Had to include .first, but do not understand why
@@ -57,7 +57,7 @@ def print_coffees
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
  	@create_coffee[0..9].each do |drink|
 		binding.pry
-	puts  "#{drink.coffee_name}"
+	puts  "#{drink.name}"
 	puts ""
 
 	end

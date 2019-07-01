@@ -6,45 +6,48 @@ def self.scrape_cafe
 	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
 
 	page = Nokogiri::HTML(open(site))
-		coffee = page.css("div.col-md-9.list").css("section").each do |coffees|
-
-		# Coffee names
-
-		coffee_name = coffees.css("h2").text
-
-
-		# Coffee Descriptions
-
-		frapp = coffees.xpath("//div//p")[4].text
-		carm_mach = coffees.xpath("//div//p")[10].text
-		cafe_mocha = coffees.xpath("//div//p")[15].text
-		americano = coffees.xpath("//div//p")[22].text
-		turkish_coffee = coffees.xpath("//div//p")[28].text
-		cafe_cubano = coffees.xpath("//div//p")[33].text
-		cafe_latte = coffees.xpath("//div//p")[38].text
-		irish_coffee = coffees.xpath("//div//p")[42].text
-		espresso = coffees.xpath("//div//p")[50].text
-		cortado = coffees.xpath("//div//p")[55].text
-
-		# Scraped drink recipes
-
-		frapp_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		carm_mach_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		cafe_mocha_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		americano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		turkish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		cafe_cubano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		cafe_latte_recp = coffees.css("ul li")[0..10].text.gsub(/.Step/, ". Step")
-		irish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
-		espresso_recp = coffees.css("ul li")[0..13].text.gsub(/.Step/, ". Step")
-		cortado_recp = coffees.css("ul li")[0..4].text.gsub(/.Step/, ". Step")
-
-		VirtualCafe::Virtual_Cafe_Drinks.new(coffee_name, frapp, carm_mach, cafe_mocha,americano, turkish_coffee, cafe_cubano, cafe_latte, irish_coffee, espresso, cortado, frapp_recp, carm_mach_recp, cafe_mocha_recp, americano_recp, turkish_coffee_recp, cafe_cubano_recp, cafe_latte_recp, irish_coffee_recp, espresso_recp, cortado_recp)
-
-
+		coffee = page.css("div.col-md-9.list section")
+		coffee.each do |drink|
+		name = drink.css('h2').text
+		recipe = drink.css('li')
+		VirtualCafe::Virtual_Cafe_Drinks.new(name, recipe)
 		end
 	end
 end
+		# Coffee names
+
+
+
+	# 	# Coffee Descriptions
+	#
+	# 	frapp = coffees.xpath("//div//p")[4].text
+	# 	carm_mach = coffees.xpath("//div//p")[10].text
+	# 	cafe_mocha = coffees.xpath("//div//p")[15].text
+	# 	americano = coffees.xpath("//div//p")[22].text
+	# 	turkish_coffee = coffees.xpath("//div//p")[28].text
+	# 	cafe_cubano = coffees.xpath("//div//p")[33].text
+	# 	cafe_latte = coffees.xpath("//div//p")[38].text
+	# 	irish_coffee = coffees.xpath("//div//p")[42].text
+	# 	espresso = coffees.xpath("//div//p")[50].text
+	# 	cortado = coffees.xpath("//div//p")[55].text
+	#
+	# 	# Scraped drink recipes
+	#
+	# 	frapp_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	carm_mach_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	cafe_mocha_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	americano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	turkish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	cafe_cubano_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	cafe_latte_recp = coffees.css("ul li")[0..10].text.gsub(/.Step/, ". Step")
+	# 	irish_coffee_recp = coffees.css("ul li")[0..8].text.gsub(/.Step/, ". Step")
+	# 	espresso_recp = coffees.css("ul li")[0..13].text.gsub(/.Step/, ". Step")
+	# 	cortado_recp = coffees.css("ul li")[0..4].text.gsub(/.Step/, ". Step")
+	#
+	#
+	#
+	# 	end
+	# end
 
 
 #
