@@ -8,7 +8,6 @@ class VirtualCafe::CLI_INTERFACE
 
 
 def call
-
 		puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
 		puts "Today we will learn about espresso based coffee drinks!".magenta
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
@@ -39,7 +38,6 @@ else
 	# @create_coffees =  VirtualCafe::Virtual_Cafe_Drinks.all
 	# good_coffee << @create_coffees
 
-  puts "#{drink_selection.name}"
 
 
 	# Had to include .first, but do not understand why
@@ -55,8 +53,7 @@ def print_coffees
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
- 	@create_coffee[0..9].each do |drink|
-		binding.pry
+ 	@create_coffee.each do |drink|
 	puts  "#{drink.name}"
 	puts ""
 

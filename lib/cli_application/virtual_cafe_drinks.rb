@@ -1,15 +1,15 @@
 # Creates instances of coffee drink recipes
 class VirtualCafe::Virtual_Cafe_Drinks
 
-attr_accessor :name, :recipe :id
+attr_accessor :name, :recipe, :id
 
 
 @@all = []
 
 
-def initialize (name)
+def initialize (name, recipe)
 	@name = name
-	# @recipe = recipe
+	@recipe = recipe
 	assign_id
 	@@all << self
 end
