@@ -10,14 +10,15 @@ def call
 		puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
 		puts "Today we will learn about espresso based coffee drinks!".magenta
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
+		while @input != "exit"
 		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		print_coffees
 		gets_user_input
 		valid_coffee_input ? show_drink : invalid_response
-		continue_on_to_recipe
-		end
-		exit
-	end
+		# continue_on_to_recipe
+end
+	exit
+end
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
@@ -37,32 +38,31 @@ def gets_user_input
 end
 
 def valid_coffee_input
-	VirtualCafe::Virtual_Cafe_Drinks.exists?(@input)
+	VirtualCafe::Virtual_Cafe_Drinks.exist?(@input)
 end
 
 def invalid_response
 	puts "Sorry that's an invalid response. Please try again!".magenta
 end
 
-def show_drink(drink_selection)
-VirtualCafe::CLI_SCRAPER.scrape_cafe
-puts "please choose your drink"
-drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-
-
-
-def continue_on_to_recipe
-	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	puts ""
-	puts "Would you like the recipe for this drink?".light_blue
-	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
-	puts "If you'd like to exit, please type [exit]".light_blue
-
+def show_drink
+	VirtualCafe::CLI_SCRAPER.scrape_cafe_desc
+	puts "please choose your drink"
+	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(@input)
+	puts "#{drink_selection.description}"
 end
+
+
+# def continue_on_to_recipe
+# 	VirtualCafe::CLI_SCRAPER.scrape_cafe
+# 	puts ""
+# 	puts "Would you like the recipe for this drink?".light_blue
+# 	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
+# 	puts "If you'd like to exit, please type [exit]".light_blue
+# end
 
 def exit
 	puts "Have a great day and thank you for using the Virtual Cafe!".magenta
-
 end
 
 
