@@ -14,8 +14,10 @@ def call
 		print_coffees
 		gets_user_input
 		valid_coffee_input ? show_drink : invalid_response
-		coffee_description (drink_selection)
-end
+		continue_on_to_recipe
+		end
+		exit
+	end
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
@@ -59,11 +61,8 @@ def continue_on_to_recipe
 end
 
 def exit
-# elsif input == "exit"
-	# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
-#
-# else
-# 	 call
+	puts "Have a great day and thank you for using the Virtual Cafe!".magenta
+
 end
 
 
