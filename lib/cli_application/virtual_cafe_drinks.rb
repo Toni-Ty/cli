@@ -14,6 +14,9 @@ def initialize (name, recipe)
 	@@all << self
 end
 
+def self.exist?(x)
+	(1..all.length). include?(x.to_i)
+end
 
 def self.all
 	@@all

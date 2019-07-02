@@ -1,6 +1,5 @@
 class VirtualCafe::CLI_INTERFACE
 
-#
 # def initialize
 # 		  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
 # end
@@ -13,38 +12,9 @@ def call
 	  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
 		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		print_coffees
+		gets_user_input
+		valid_coffee_input ? show_drink : invalid_response
 		coffee_description (drink_selection)
-end
-	# elsif input == "exit"
-		# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
-	#
-	# else
-	# 	 call
-#
-
-
-def coffee_description(drink_selection)
-VirtualCafe::CLI_SCRAPER.scrape_cafe
-puts "please choose your drink"
-drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
-
-input = gets.strip.downcase
-# @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-#
-# @create_coffee[0].each do |drinks|
-if input == "exit"
-	puts "bye"
-else
-	# @create_coffees =  VirtualCafe::Virtual_Cafe_Drinks.all
-	# good_coffee << @create_coffees
-
-
-
-	# Had to include .first, but do not understand why
-#   frapps = @create_coffee.first
-# 	puts  "#{frapps.frapp}"
-	# puts "#{drink_selection.frapp}"
-	end
 end
 
 def print_coffees
@@ -60,6 +30,24 @@ def print_coffees
 	end
 end
 
+def gets_user_input
+	@input = gets.strip.downcase
+end
+
+def valid_coffee_input
+	VirtualCafe::Virtual_Cafe_Drinks.exists?(@input)
+end
+
+def invalid_response
+	puts "Sorry that's an invalid response. Please try again!".magenta
+end
+
+def show_drink(drink_selection)
+VirtualCafe::CLI_SCRAPER.scrape_cafe
+puts "please choose your drink"
+drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(input)
+
+
 
 def continue_on_to_recipe
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
@@ -69,6 +57,15 @@ def continue_on_to_recipe
 	puts "If you'd like to exit, please type [exit]".light_blue
 
 end
+
+def exit
+# elsif input == "exit"
+	# puts "Have a great day and thank you for using the Virtual Cafe!".magenta
+#
+# else
+# 	 call
+end
+
 
 
 
