@@ -46,7 +46,6 @@ def invalid_response
 end
 
 def show_drink
-	VirtualCafe::CLI_SCRAPER.scrape_cafe_desc
 	puts "please choose your drink"
 	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(@input)
 	puts "#{drink_selection.description}"
