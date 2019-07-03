@@ -15,7 +15,8 @@ def call
 		print_coffees
 		gets_user_input
 		valid_coffee_input ? show_drink : invalid_response
-		# continue_on_to_recipe
+		continue_on_to_recipe
+		print_coffees
 end
 	exit
 end
@@ -48,17 +49,17 @@ end
 def show_drink
 	puts "please choose your drink"
 	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(@input)
-	puts "#{drink_selection.description}"
+	puts "#{drink_selection.recipe}"
 end
 
 
-# def continue_on_to_recipe
-# 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-# 	puts ""
-# 	puts "Would you like the recipe for this drink?".light_blue
-# 	puts "If so, please type [the name of the drink]...Or type [start over]".light_blue
-# 	puts "If you'd like to exit, please type [exit]".light_blue
-# end
+def continue_on_to_recipe
+	VirtualCafe::CLI_SCRAPER.scrape_cafe
+	puts ""
+	puts "Would you like to see a new coffee drink and recipe?".light_blue
+	puts "If so, please choose your drink...Or type [exit]".light_blue
+	# puts "If you'd like to exit, please type [exit]".light_blue
+end
 
 def exit
 	puts "Have a great day and thank you for using the Virtual Cafe!".magenta

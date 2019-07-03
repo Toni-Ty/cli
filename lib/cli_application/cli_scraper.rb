@@ -8,27 +8,27 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list section")
 		coffee.each do |drink|
-		name = drink.css('h2').text
-		recipe = drink.css('li').text
+		name = drink.css('h2').text.gsub(/.Step/, ". Step")
+		recipe = drink.css('li').text.gsub(/.Step/, ". Step")
 		VirtualCafe::Virtual_Cafe_Drinks.new(name, recipe)
 			end
 		end
 	end
 
 		# Coffee names
-def self.scrape_cafe_desc
-
-			site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
-
-			page = Nokogiri::HTML(open(site))
-				coffee = page.css("instructions")
-				coffee.each do |describe|
-
-				description = describe.css('p').text
-				VirtualCafe::Virtual_Cafe_Drinks.new(description)
-			end
-		end
-
+# def self.scrape_cafe_desc
+#
+# 			site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+#
+# 			page = Nokogiri::HTML(open(site))
+# 				coffee = page.css("instructions")
+# 				coffee.each do |describe|
+#
+# 				description = describe.css('p').text
+# 				VirtualCafe::Virtual_Cafe_Drinks.new(description)
+# 			end
+# 		end
+#
 
 
 	# 	# Coffee Descriptions
