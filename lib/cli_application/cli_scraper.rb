@@ -8,7 +8,7 @@ def self.scrape_cafe
 	page = Nokogiri::HTML(open(site))
 		coffee = page.css("div.col-md-9.list section")
 		coffee.each do |drink|
-		name = drink.css('h2').text.gsub(/.Step/, ". Step")
+		name = drink.css('h2').text
 		recipe = drink.css('li').text.gsub(/.Step/, ". Step")
 		VirtualCafe::Virtual_Cafe_Drinks.new(name, recipe)
 			end

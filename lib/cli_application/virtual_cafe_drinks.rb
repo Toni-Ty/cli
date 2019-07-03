@@ -30,6 +30,9 @@ def self.find_by_id(input)
 	all.find{ |d| d.id == input.to_i }
 end
 
+# def get_details
+# 	VirtualCafe::CLI_SCRAPER.scrape_cafe(self)
+# end
 
 
 def self.reset
