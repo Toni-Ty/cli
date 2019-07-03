@@ -1,10 +1,5 @@
+# User interface and menu
 class VirtualCafe::CLI_INTERFACE
-
-# def initialize
-# 		  @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
-# end
-
-
 
 def call
 		puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
@@ -18,8 +13,6 @@ def call
 	end
 end
 
-
-
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
 	@create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
@@ -30,8 +23,6 @@ def print_coffees
 	puts ""
 end
 
-
-
 def gets_user_input
 	@input = gets.strip
 end
@@ -41,14 +32,13 @@ def valid_coffee_input
 end
 
 def invalid_response
-	puts "Sorry that's an invalid response. Please try again!".magenta
+	puts "Sorry that's an invalid response. Please try again :)".magenta
 	puts ""
 	call
 end
-end
+
 
 def show_drink
-	puts "please choose your drink"
 	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(@input)
 	puts "#{drink_selection.recipe}"
 end
@@ -67,11 +57,6 @@ def continue_on_to_new_recipe?
 		exit
 	else
 		invalid_response
-end
-
-
-
-
-
-
-end
+			end
+		end
+	end

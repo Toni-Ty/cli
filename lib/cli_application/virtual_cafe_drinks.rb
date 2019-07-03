@@ -14,8 +14,8 @@ def initialize (name, recipe)
 	@@all << self
 end
 
-def self.exist?(x)
-	(1..all.length). include?(x.to_i)
+def self.exist?(input)
+	(1..all.length). include?(input.to_i)
 end
 
 def self.all
@@ -30,27 +30,7 @@ def self.find_by_id(input)
 	all.find{ |d| d.id == input.to_i }
 end
 
-# def get_details
-# 	VirtualCafe::CLI_SCRAPER.scrape_cafe(self)
-# end
-
-
 def self.reset
 	@@all.clear
-end
-
-
-# def coffee_description(drink_selection)
-# VirtualCafe::CLI_SCRAPER.scrape_cafe
-#
-# 	#  Had to include .first, but do not understand why
-# 	#
-# 	# frapps = drink_selection.frapp
-#
-# 	# puts  "#{drink_selection.frapp}"
-#
-#
-# 	# carm_macchiato = @create_coffee[1]
-# 	puts  "#{drink_selection.carm_mach}"
-
+	end
 end
