@@ -16,23 +16,25 @@ def call
 		gets_user_input
 		valid_coffee_input ? show_drink : invalid_response
 		continue_on_to_recipe
-		print_coffees
+	end
 end
-	exit
-end
+
+
 
 def print_coffees
 	VirtualCafe::CLI_SCRAPER.scrape_cafe
-	@create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+	# @create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
+
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
- 	@create_coffee.each do |drink|
-	puts  "#{drink.name}"
-	puts ""
+	VirtualCafe::Virtual_Cafe_Drinks.all.each { |cd| puts "#{cd.name}" }
 
+ # 	@create_coffee.each do |drink|
+	# puts  "#{drink.name}"
+	puts ""
 	end
-end
+
 
 def gets_user_input
 	@input = gets.strip.downcase
