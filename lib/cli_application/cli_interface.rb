@@ -40,6 +40,7 @@ end
 
 def show_drink
 	drink_selection = VirtualCafe::Virtual_Cafe_Drinks.find_by_id(@input)
+	puts "#{drink_selection.name}"
 	puts "#{drink_selection.recipe}"
 end
 
