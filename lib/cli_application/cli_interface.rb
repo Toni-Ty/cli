@@ -19,12 +19,18 @@ def print_coffees
   puts "Which coffee drink would you like to learn about?".magenta
   puts "Please select a number from 1-10".magenta
 	puts "(for example, FRAPPUCCINO = 1, CARAMEL MACCHIATO = 2, etc...)".blue
-  @create_coffee.each.with_index  { |drink, i| puts "#{i + 1}. #{drink.name}" }
+  @create_coffee[0..14].each.with_index  { |drink, i| puts "#{i + 1}. #{drink.name}"}
 	puts ""
 end
 
+
 def gets_user_input
 	@input = gets.strip.downcase
+	if @input.to_i < 16
+			valid_coffee_input
+	else
+		invalid_response
+ end
 end
 
 def valid_coffee_input
