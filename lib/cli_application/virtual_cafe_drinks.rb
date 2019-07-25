@@ -6,7 +6,6 @@ class VirtualCafe::Virtual_Cafe_Drinks
 
 	@@all = []
 
-
 	def initialize (name, recipe)
 		@name = name
 		@recipe = recipe

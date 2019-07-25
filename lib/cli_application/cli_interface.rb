@@ -1,11 +1,15 @@
 # User interface and menu
 class VirtualCafe::CLI_INTERFACE
 
+	def initialize
+		VirtualCafe::CLI_SCRAPER.scrape_cafe
+	end
+
 	def call
-			puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
-			puts "Today we will learn about espresso based coffee drinks!".magenta
-		  puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
-			while @input != "exit"
+	  puts "Hello, and Welcome to the Virtual Coffee Cafe!".magenta
+	  puts "Today we will learn about espresso based coffee drinks!".magenta
+		puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
+		while @input != "exit"
 			print_coffees
 			gets_user_input
 			valid_coffee_input ? show_drink : invalid_response
@@ -14,7 +18,6 @@ class VirtualCafe::CLI_INTERFACE
 	end
 
 	def print_coffees
-		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		@create_coffee =  VirtualCafe::Virtual_Cafe_Drinks.all
 	  puts "Which coffee drink would you like to learn about?".magenta
 	  puts "Please select a number from 1-10".magenta
@@ -52,7 +55,6 @@ class VirtualCafe::CLI_INTERFACE
 
 
 	def continue_on_to_new_recipe
-		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		puts ""
 		puts "Would you like to see a new coffee drink and recipe?".light_blue
 		puts "If so, please type [Y]...Or type [exit] to leave the cafe".light_blue
