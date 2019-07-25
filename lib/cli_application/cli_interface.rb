@@ -9,7 +9,7 @@ class VirtualCafe::CLI_INTERFACE
 			print_coffees
 			gets_user_input
 			valid_coffee_input ? show_drink : invalid_response
-			continue_on_to_new_recipe?
+			continue_on_to_new_recipe
 		end
 	end
 
@@ -25,7 +25,7 @@ class VirtualCafe::CLI_INTERFACE
 
 
 	def gets_user_input
-		@input = gets.strip.downcase
+		@input = gets.strip
 		if @input.to_i < 16
 				valid_coffee_input
 		else
@@ -35,7 +35,7 @@ class VirtualCafe::CLI_INTERFACE
 
 	def valid_coffee_input
 		VirtualCafe::Virtual_Cafe_Drinks.exist?(@input)
-	end
+		end
 
 	def invalid_response
 		puts "Sorry that's an invalid response. Please try again :)".magenta
@@ -51,7 +51,7 @@ class VirtualCafe::CLI_INTERFACE
 	end
 
 
-	def continue_on_to_new_recipe?
+	def continue_on_to_new_recipe
 		VirtualCafe::CLI_SCRAPER.scrape_cafe
 		puts ""
 		puts "Would you like to see a new coffee drink and recipe?".light_blue
